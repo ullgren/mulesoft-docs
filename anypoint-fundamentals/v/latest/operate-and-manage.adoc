@@ -72,12 +72,12 @@ something about autoscaling when it comes out
 
 image:infrastructure-simple-cloud.png[cloud]
 
-Applications can be deployed to different link:/anypoint-platform-administration/managing-cloudhub-environments[environments] (such as _production_ or _QA_) to keep in line with your workflow.
+Applications can be deployed to different link:/access-management/managing-cloudhub-environments[environments] (such as _production_ or _QA_) to keep in line with your workflow.
 
 [TIP]
 You can also deploy applications you have developed in Anypoint Studio directly to CloudHub link:runtime-manager/deploying-to-cloudhub#from-anypoint-studio[without leaving the Studio IDE].
 
-Additionally, you can use the link:/anypoint-platform-for-apis/anypoint-platform-cli[Anypoint Platform Command Line Interface] to manage your CloudHub infrastructure components such as:
+Additionally, you can use the link:/api-manager/anypoint-platform-cli[Anypoint Platform Command Line Interface] to manage your CloudHub infrastructure components such as:
 
 * Private networks where your workers are hosted (link:/runtime-manager/virtual-private-cloud[VPC])
 * Load balancer for the network
@@ -164,15 +164,15 @@ To better understand how options differ between applications deployed to CloudHu
 
 image:api-logo.png[AnypointAPI_manager]
 
-link:/anypoint-platform-for-apis[API Manager], formerly known as *Anypoint Platform for APIs*, is an API and service registry and governance platform. Built from the ground up to support cloud and hybrid use cases, the platform governs all of your service and API assets, whether internal or external, behind a firewall or in the cloud, all via one platform. Place a proxy in front of your application to apply traffic policies, view usage metrics and more.
+link:/api-manager[API Manager] is an API and service registry and governance platform. Built from the ground up to support cloud and hybrid use cases, the platform governs all of your service and API assets, whether internal or external, behind a firewall or in the cloud, all via one platform. Place a proxy in front of your application to apply traffic policies, view usage metrics and more.
 
-You can either register a Mule application by imbuing it with link:/anypoint-platform-for-apis/api-auto-discovery[auto-discovery parameters], or taking an existing legacy API and triggering creation of a Mule proxy to govern and monitor the API. Either case results in registration of your API with your API Manager.
+You can either register a Mule application by imbuing it with link:/api-manager/api-auto-discovery[auto-discovery parameters], or taking an existing legacy API and triggering creation of a Mule proxy to govern and monitor the API. Either case results in registration of your API with your API Manager.
 
-Once an API is registered, you can easily link:/anypoint-platform-for-apis/applying-runtime-policies[apply governance policies] to it via the web UI, such as *throttling* or *API whitelisting*. Apply such policies after providing parameter values, and then simply by clicking the *Activate* button. You can also generate your own custom policies if you require something that isn't covered by the lengthy list of pre-built policies.
+Once an API is registered, you can easily link:/api-manager/applying-runtime-policies[apply governance policies] to it via the web UI, such as *throttling* or *API whitelisting*. Apply such policies after providing parameter values, and then simply by clicking the *Activate* button. You can also generate your own custom policies if you require something that isn't covered by the lengthy list of pre-built policies.
 
-With your API registered, the Anypoint Platform will start link:/anypoint-platform-for-apis/analytics[tracking analytics] about API usage and performance.
+With your API registered, the Anypoint Platform will start link:/api-manager/analytics[tracking analytics] about API usage and performance.
 
-At that point you could create an link:/anypoint-platform-for-apis/engaging-users-of-your-api[API Portal], where users of your API can browse interactive API documentation that is automatically generated from your API's RAML definition file. You can expose other content from this API Portal as well.
+At that point you could create an link:/api-manager/engaging-users-of-your-api[API Portal], where users of your API can browse interactive API documentation that is automatically generated from your API's RAML definition file. You can expose other content from this API Portal as well.
 
 [TIP]
 The platform supports maintenance of multiple versions of an API, each with its independent set of policies, analytics and portal.
