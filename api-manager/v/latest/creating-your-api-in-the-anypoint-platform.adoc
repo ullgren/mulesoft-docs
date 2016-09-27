@@ -31,6 +31,21 @@ To deploy the API on CloudHub, observe link:/runtime-manager/deploying-to-cloudh
 
 Anypoint Platform uses the name and version to create an administrative command center for your API, called the link:/api-manager/tutorial-set-up-and-deploy-an-api-proxy#navigate-to-the-api-version-details-page[API version details page] in this document.
 
+== Creating a New Version for an Existing API
+
+
+API Manager allows you to have multiple versions of the same API existing in parrallel. You can easily create a new version, to do so just click the *Create New Version* button next to the API:
+
+image:button
+
+You can create this version from scratch, or you can also base it on prior versions by exporting another version and then importing it here.
+
+This new version of the API will exist together with the already exising versions, and have its own RAML file, its own API Portal and its own address. If you wish, you can also add a *Deprecated* label to an API, to signal this state to your users on the API Portal.
+
+[NOTE]
+If you don't see the "Create New Version" button, it may be because your user lacks permissions for carrying out this task on this particular API.
+
+
 == Importing and Exporting an API
 
 If you want to migrate or copy an existing API Version, you can link:/api-manager/managing-api-versions[export the existing API] to a .zip file and then import it into a new API Version.
