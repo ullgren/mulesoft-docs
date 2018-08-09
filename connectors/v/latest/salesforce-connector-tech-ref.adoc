@@ -518,6 +518,7 @@ The custom headers to be associated with this batch request
 
 [[changeOwnPassword]]
 === Change Own Password
+
 `<salesforce:change-own-password>`
 
 +++
@@ -529,17 +530,19 @@ Changes the password of the user linked to the connector's configuration.
 |======================
 | Name | Type | Description | Default Value | Required
 | Configuration | String | The name of the configuration to use. | | *x*{nbsp}
-| Old Password a| String |  +++The old password to be changed+++ |  | *x*{nbsp}
-| New Password a| String |  +++The new password to be changed+++ |  | *x*{nbsp}
+| Old Password a| String |  +++The old password to be changed.+++ |  | *x*{nbsp}
+| New Password a| String |  +++The new password to be changed.+++ |  | *x*{nbsp}
 | Reconnection Strategy a| * <<reconnect>>
-* <<reconnect-forever>> |  +++A retry strategy in case of connectivity errors+++ |  | {nbsp}
+* <<reconnect-forever>> |  +++A retry strategy in case of connectivity errors.+++ |  | {nbsp}
 |======================
 
 
-==== For Configurations.
+==== For Configurations
+
 * <<sfdc-config>> {nbsp}
 
 ==== Throws
+
 * SALESFORCE:CONNECTIVITY {nbsp}
 * SALESFORCE:UNKNOWN {nbsp}
 * SALESFORCE:INVALID_SESSION {nbsp}
@@ -547,10 +550,9 @@ Changes the password of the user linked to the connector's configuration.
 * SALESFORCE:INVALID_STRUCTURE_FOR_INPUT_DATA {nbsp}
 * SALESFORCE:INVALID_REQUEST_DATA {nbsp}
 
-
-
 [[closeJob]]
 === Close Job
+
 `+<http://www.mulesoft.org/schema/mule/salesforce:close-job>+`
 
 +++
