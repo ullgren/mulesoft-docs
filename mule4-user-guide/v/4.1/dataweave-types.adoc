@@ -2,11 +2,13 @@
 :keywords: studio, anypoint, esb, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
 
 //TODO: NEED TO MERGE THIS INFO WITH THE CORE TYPES. DISCUSS WITH MDA.
-The built-in DataWeave functions support a number of data types for elements, including arrays, Booleans, objects, dates, times, and many others described here.
+The built-in DataWeave functions support a number of data types for elements, including arrays, Booleans, objects, dates, times, and many others.
+
+NOTE: For a complete reference of core types, visit link:/mule4-user-guide/v/4.1/dw-core-types[Core Types].
 
 == Supported Types
 
-Core types from the `dw::Core`) are available to most built-in DataWeave function modules. Some of the other modules define their own types.
+Core types defined in the `dw::Core` module are available to most built-in DataWeave function modules. Some of the other modules define their own types.
 
 * link:dw-core-types[Core Types (dw::Core)]
 * link:dw-runtime-types[Runtime Types (dw::Runtime)]
@@ -14,14 +16,14 @@ Core types from the `dw::Core`) are available to most built-in DataWeave functio
 * link:dw-diff-types[Diff Types (dw::core::Diff)]
 * link:dw-timer-types[Timer Types (dw::core::Timer)]
 
-The remaining sections below provide more detail on data types that are commonly used or sometimes misunderstood. They also cover some important topics that relate to the data type, for example:
+This topic also provides information about behaviors common to many DataWeave types:
 
 * Conditional elements that use `if` expressions for <<conditional_elements_array, arrays>> and <<conditional_elements_object, objects>>.
-* <<string_interpolation>>.
-* <<date_decomposition>> for accessing different parts of a date.
-* <<date_format_change>>.
-* <<dynamic_keys>> and <<dynamic_elements>>, which allow you to access parts of an object dynamically.
-* Use of <<dw_type_regex>> expressions.
+* <<string_interpolation>>
+* <<date_decomposition>> for accessing different parts of a date
+* <<date_format_change>>
+* <<dynamic_keys>> and <<dynamic_elements>>, which allow you to access parts of an object dynamically
+* Use of <<dw_type_regex>> expressions
 
 == Array (dw::Core Type)
 
