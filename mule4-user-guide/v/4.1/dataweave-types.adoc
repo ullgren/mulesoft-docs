@@ -1,14 +1,16 @@
 = DataWeave Types
 :keywords: studio, anypoint, esb, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
 
-//TODO: NEED TO MERGE THIS INFO WITH THE CORE TYPES. DISCUSS WITH MDA.
-The built-in DataWeave functions support a number of data types for elements, including arrays, Booleans, objects, dates, times, and many others.
+DataWeave functions operate on data of many types, including arrays, Booleans, objects, dates, and times.
+The types that DataWeave provide are bundled into modules that also contain the related functions. 
 
-NOTE: For a complete reference of core types, visit link:/mule4-user-guide/v/4.1/dw-core-types[Core Types].
+The `dw::Core` module types (core types) are available without having to specify the Core module. Other modules may need to be specified for their functions and types to be available.
 
-== Supported Types
+This topic provides an overview of the commonly used types. A complete reference is available in link:/dw-functions[each module's reference pages].
 
-Core types defined in the `dw::Core` module are available to most built-in DataWeave function modules. Some of the other modules define their own types.
+== Quick Reference
+
+Module reference pages provide complete data type documentation:
 
 * link:dw-core-types[Core Types (dw::Core)]
 * link:dw-runtime-types[Runtime Types (dw::Runtime)]
@@ -16,7 +18,7 @@ Core types defined in the `dw::Core` module are available to most built-in DataW
 * link:dw-diff-types[Diff Types (dw::core::Diff)]
 * link:dw-timer-types[Timer Types (dw::core::Timer)]
 
-This topic also provides information about behaviors common to many DataWeave types:
+This topic provides descriptions of common patterns of use:
 
 * Conditional elements that use `if` expressions for <<conditional_elements_array, arrays>> and <<conditional_elements_object, objects>>.
 * <<string_interpolation>>
