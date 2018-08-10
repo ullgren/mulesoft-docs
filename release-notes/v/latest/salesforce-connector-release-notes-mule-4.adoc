@@ -19,7 +19,7 @@ _Select_
 
 === Fixed in this Release
 
-* Fixed an issue in Reconnection Strategy.
+*Salesforce connector disconnects and never connects back again*. The issue was fixed by making changes in the Reconnection Strategy.
 
 
 == 9.3.0
