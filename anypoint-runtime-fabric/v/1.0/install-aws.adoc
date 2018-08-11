@@ -50,7 +50,7 @@ Some of the values for the variables below are available on the Create Runtime F
 |Variable | Description | Example
 | `cluster_name` | The name for your Runtime Fabric cluster. | `rtf-aws`
 | `key_pair` | The name of the keypair in the AWS region you are deploying to. | `my-keypair`
-| `enable_public_ips` | Provision public IP addresses for each VM. | `FALSE`
+| `enable_public_ips` | Provision public IP addresses for each VM. | `false`
 | `anypoint_org_id` | The ID for your Anypoint organization, available on the Create Runtime Fabric page. | `2f99d26-a3c2-4023-b303-5528sdd5v022`
 | `anypoint_token` | An active bearer token for your Anypoint user, available on the Create Runtime Fabric page. | `bearer 626d7810-0730-498b-bd48-544490c2226b`
 | `anypoint_region` | The Anypoint broker region you're registering to, available on the Create Runtime Fabrics page. | `us-east-1`
