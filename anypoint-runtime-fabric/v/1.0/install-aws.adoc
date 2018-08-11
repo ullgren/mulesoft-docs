@@ -21,13 +21,13 @@ In addition, ensure the following criteria have been met before beginning the in
 
 == Download Script
 
-The installer script ZIP file includes the necessary scripts needed to install Runtime Fabric.
+The installer script zip file includes the necessary scripts needed to install Runtime Fabric.
 
 . Log in to Anypoint platform and navigate to Runtime Manager.
 . On the left navigation pane, select "Runtime Fabrics".
 . Click "Create Runtime Fabric".
 . Click the "Download files" link.
-. Once downloaded, unzip the `rtf-install-scripts-\*.zip` file.
+. Once downloaded, unzip the `rtf-install-scripts-*.zip` file.
 
 You'll find a directory named `aws` containing the following:
 
