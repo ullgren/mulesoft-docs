@@ -55,7 +55,7 @@ Some of the values for the variables below are available on the Create Runtime F
 | `anypoint_org_id` | The ID for your Anypoint organization, available on the Create Runtime Fabric page. | `2f99d26-a3c2-4023-b303-5528sdd5v022`
 | `anypoint_token` | An active bearer token for your Anypoint user, available on the Create Runtime Fabric page. | `bearer 626d7810-0730-498b-bd48-544490c2226b`
 | `anypoint_region` | The Anypoint broker region you're registering to, available on the Create Runtime Fabrics page. | `us-east-1`
-| `anypoint_endpoint` | The Anypoint control plane you're registering to, available on the Create Runtime Fabrics page. | `us-east-1`
+| `anypoint_endpoint` | The Anypoint control plane you're registering to, available on the Create Runtime Fabrics page. | `anypoint.mulesoft.com`
 | `installer_url` | The URL of the Runtime Fabric installation package. | `https://runtime-fabric.s3.amazonaws.com/...`
 | `controllers` | The number of controller VMs to provision. | `3`
 | `workers` | The number of worker VMs to provision. | `3`
