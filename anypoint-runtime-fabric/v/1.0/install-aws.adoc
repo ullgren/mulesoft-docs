@@ -33,6 +33,9 @@ You'll find a directory named `aws` containing the following:
 
 * `fabric.tf`: a link:https://terraform.io/[Terraform] script to provision infrastructure on your AWS account.
 * `security_group.tf`: a separate Terraform script containing the Security Groups used by the `fabric.tf` script.
+* `installer_env.sh`: a shell script of environment variables added to the installer VM.
+* `controller_env.sh`: a shell script of environment variables added to the controller VM(s).
+* `worker_env.sh`: a shell script of environment variables added to the worker VM(s).
 * `README.md`: a markdown file containing installation instructions.
 
 == Provision Infrastructure
@@ -52,7 +55,7 @@ Some of the values for the variables below are available on the Create Runtime F
 |Variable | Description | Example
 | `cluster_name` | The name for your Runtime Fabric cluster; will be visible in Runtime Manager, composed of alphanumeric characters, hyphens and underscores only. | `rtf-aws`
 | `key_pair` | The name of the keypair in the AWS region you are deploying to. | `my-keypair`
-| `enable_public_ips` | Provision public IP addresses for each VM. | `false`
+| `enable_public_ips` | Provision public IP addresses for each VM. If left as false, ensure you've consulted with your network administrator on how to obtain shell/SSH access to VMs. | `false`
 | `anypoint_org_id` | The ID for your Anypoint organization, available on the Create Runtime Fabric page. | `2f99d26-a3c2-4023-b303-5528sdd5v022`
 | `anypoint_token` | An active Anypoint authentication token, available on the Create Runtime Fabric page. | `bearer 626d7810-0730-498b-bd48-544490c2226b`
 | `anypoint_region` | The Anypoint broker region you're registering to, available on the Create Runtime Fabrics page. | `us-east-1`
