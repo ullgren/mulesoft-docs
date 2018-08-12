@@ -184,7 +184,7 @@ This feature is also helpful for reducing the quantity of logs when you need to 
 
 === Configuring Logs
 
-. Under the Edge Configuration tab in the Manage Runtime Fabrics page, click the "Logs +" link.
+. Under the Inbound Traffic tab in the Manage Runtime Fabrics page, click the "Logs +" link.
 . Click the *Add Filter* button.
 . In the *IP* field, enter a single IP address or subset of addresses using CIDR notation.
 . Select the log level to apply for this IP filter.
