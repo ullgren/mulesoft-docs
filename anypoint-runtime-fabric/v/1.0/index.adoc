@@ -24,20 +24,26 @@ By default, the services operating Runtime Fabric are deployed across the contro
 Anypoint Runtime Fabric uses a set of technologies, including Docker and Kubernetes, which are tuned to operate well with Mule runtimes. Knowledge of these technologies is not required to deploy or manage Mules on Runtime Fabric. Managing Runtime Fabric requires the operational and infrastructure-level experience needed to support any system at scale. We recommend following best practices and running fire drill scenarios in controlled environments to help prepare for unexpected failures.
 
 [NOTE]
-Deployments of non-Mule applications or gateways on Anypoint Runtime Fabric is not supported.
+Deployments of applications and gateways not powered by Mule on Anypoint Runtime Fabric is not supported.
+
+=== Comparing to Other PaaS
+
+Anypoint Runtime Fabric contains specific versions of all components required to function as designed. Each component, including Docker and Kubernetes, are tuned to operate efficiently with the Mule runtime and other MuleSoft services. Installing Runtime Fabric within an existing Kubernetes-based PaaS is not supported.
+
+For customers already running on a PaaS, it's recommended to deploy Runtime Fabric alongside the PaaS to take advantage of the complete benefits of Anypoint Platform.
 
 === Connectivity to Anypoint Cloud Control Plane
 
 Anypoint Runtime Fabric supports the following:
 
-* Deploying applications from Anypoint Runtime Manager
-* Deploying policy updates of API gateways using API Manager
-* Integration with Anypoint Exchange to store and retrieve related assets. 
+* Deploying applications from Anypoint Runtime Manager.
+* Deploying policy updates of API gateways using API Manager.
+* Integration with Anypoint Exchange to store and retrieve related assets.
 
-To enable this, Runtime Fabric establishes an outbound connection to the Anypoint Cloud Control Plane. A set of services running on the controller VMs initiate outbound connections to retrieve the metadata and assets required for application deployment. These services then translate and communicate with other internal services to cache the assets locally and deploy the application.
+To enable this, Runtime Fabric establishes an outbound connection to Anypoint Cloud control plane via the AMQP protocol and secured using mutual TLS. A set of services running on the controller VMs initiate outbound connections to retrieve the metadata and assets required for application deployment. These services then translate and communicate with other internal services to cache the assets locally and deploy the application. 
 
 [NOTE]
-Anypoint Runtime Fabric uses the AMQP protocol to connect to Anypoint Cloud Control Plane. Check with your network administrator on enabling outbound connections from your organization's network using this protocol.
+Anypoint Runtime Fabric uses the AMQP protocol to connect to Anypoint Cloud control plane. Check with your network administrator on enabling outbound connections from your organization's network using this protocol.
 
 == Comparing to Standalone Mule Runtimes
 
