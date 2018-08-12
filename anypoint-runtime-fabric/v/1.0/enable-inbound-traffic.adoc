@@ -17,12 +17,12 @@ All inbound traffic entering Anypoint Runtime Fabric is encrypted using TLS. Thi
 
 == Before You Begin
 
-. Decide which environment you want to use for applications that will run in your Runtime Fabric. We’ll call this “your RTF environment” for the purposes of this doc.
+. Decide which environment you want to use for applications that will run in your Runtime Fabric. We’ll call this “your Runtime Fabric environment” for the purposes of this doc.
 . Make sure you have the necessary permissions. _Note: It may take up to 5 minutes for any permissions you gain to propagate._
 .. Navigate to Access Management from the Anypoint landing page. If you don’t have access to it, you may have to request the following permissions from your administrator.
 .. Click “Users” in the sidebar on the left, then find the row with your username and click on the blue link.
-.. In the Runtime Manager tab, give yourself the “Manage Runtime Fabrics” permission for your RTF environment.
-.. In the Secrets Manager tab, give yourself the “Manage Secret Groups”, “Write Secrets”, and “Read Secrets Metadata” permissions for your RTF environment.
+.. In the Runtime Manager tab, give yourself the “Manage Runtime Fabrics” permission for your Runtime Fabric environment.
+.. In the Secrets Manager tab, give yourself the “Manage Secret Groups”, “Write Secrets”, and “Read Secrets Metadata” permissions for your Runtime Fabric environment.
 . You’ll need a certificate-key pair for the internal load balancer in Runtime Fabric. If you have one already, both files must be of the .pem type, your keystore must have a passcode, and your Common Name should match the domain you’ll use in your Runtime Fabric. Otherwise, follow these steps to generate one for evaluation purposes:
 .. Run the following command on your machine to begin generating a certificate-key pair: `openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365`
 .. Type a passphrase for your key.
@@ -34,9 +34,9 @@ _Note: If you use a wildcard (e.g. *.example.com) in your common name, your appl
 
 == Create a TLS Context
 
-In this section, we’ll include your certificate-key pair in a TLS context and store it in Secrets manager. This will be used later to encrypt inbound traffic to your Runtime Fabric.
+In this section, we’ll include your certificate-key pair in a TLS context and store it in Secrets Manager. This will be used later to encrypt inbound traffic to your Runtime Fabric.
 
-. Navigate to Secrets Manager from the Anypoint Platform homepage. *Important: Make sure you’re in the right business group and select your RTF environment in the sidebar on the left.*
+. Navigate to Secrets Manager from the Anypoint Platform homepage. *Important: Make sure you’re in the right business group and select your Runtime Fabric environment in the sidebar on the left.*
 . Click the Create Secret Group button.
 . In General, type the name of your secret group. Click the Save button.
 . Click Keystore in the sidebar on the left and create your keystore:
@@ -62,13 +62,13 @@ In this section, we’ll apply the TLS context you created to your Runtime Fabri
 
 . Navigate to Runtime Manager and click Runtime Fabrics in the sidebar on the left.
 . Click on the name of your Runtime Fabric to open its management page.
-. In the Environments tab, make sure your RTF environment is associated with your Runtime Fabric. If it’s not listed under “Associated Environments”, then select it from the menu and click Apply.
+. In the Environments tab, make sure your Runtime Fabric environment is associated with your Runtime Fabric. If it’s not listed under “Associated Environments”, then select it from the menu and click Apply.
 . Select the Inbound Traffic tab and turn on the Enable inbound traffic toggle.
 . Under Basic Configuration:
 .. Set the number of replicas to run the internal load balancer with. _Note: A minimum of 2 replicas is required for production environments. These replicas will only run on the controller VMs._
 .. Determine the amount of CPU and memory to allocate for each replica of the internal load balancer. _Note: TLS termination is computationally expensive. Allocate more CPU to increase throughput and decrease latency._
 . Under TLS Configuration:
-.. In the Environment menu, select your RTF environment.
+.. In the Environment menu, select your Runtime Fabric environment.
 .. In the Secrets Group menu, select the secrets group containing the TLS context that you created earlier.
 +
 _Note: If your secrets group doesn’t appear, make sure you have the “Manage Runtime Fabrics” permission under Runtime Manager in Access Management. It may take up to 5 minutes for permissions to propagate._
