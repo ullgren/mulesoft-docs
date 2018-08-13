@@ -15,5 +15,6 @@ When selecting a production environment, a dialog will appear to ensure Runtime 
 
 == See Also
 
+* link:/anypoint-runtime-fabric/v/1.0/enable-inbound-traffic[Enable inbound traffic to Runtime Fabric]
 * link:/anypoint-runtime-fabric/v/1.0/configure-log-forwarding[Configure Log Forwarding on Anypoint Runtime Fabric]
 * link:/anypoint-runtime-fabric/v/1.0/configure-alerting[Configure Alerting on Anypoint Runtime Fabric]
