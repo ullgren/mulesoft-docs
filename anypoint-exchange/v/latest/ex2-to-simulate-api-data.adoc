@@ -22,8 +22,6 @@ image:ex2-api-instances.png[API Instances Mocking Service URL]
 . From Design Center > API Specification, provide example data that the implementation returns. Alternatively, you can develop an OAS (Swagger) specification from a text editor and add the example data there.
 . In the REST specification provide an HTTP status code for a successful API call. 
 
-Both of these are described in greater detail in "To Simulate Calling a RAML API (Mocking)" listed in the See Also section of this document.
-
 == To Test a REST API With Simulated Data
 
 . In Exchange, click a REST API.
@@ -38,7 +36,5 @@ the HTTP 200 OK status to indicate success, and lists the data that is sent from
 == See Also
 
 * link:/anypoint-exchange/to-change-raml-version[To Change a RAML Version].
-* link:/design-center/v/1.0/mocking-reference[Simulating Calls to the API (Mocking) Reference].
-* link:/design-center/v/1.0/simulate-api-task[To Simulate Calling a RAML API (Mocking)].
-* link:/design-center/v/1.0/design-api-ui-reference#mocking-service-baseuri[Mocking Service baseURI].
+* link:/design-center/v/1.0/design-mocking-service[Simulating Calls to an API].
 

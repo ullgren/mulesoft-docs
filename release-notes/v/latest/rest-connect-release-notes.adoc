@@ -1,11 +1,41 @@
 = REST Connect Release Notes
 :keywords: rest, connect, release notes
 
-*May 2018*
+*June 2018*
 
-*Guide:* link:/anypoint-exchange/to-deploy-using-rest-connect[FAQ: REST Connect]
+*Guide:* link:/anypoint-exchange/to-deploy-using-rest-connect[Converting a RAML to a Connector Using REST Connect]
 
 REST Connect quickly converts a RAML 1.0 API specification to a connector, which you can use in a Mule application in the Design Center feature of Anypoint Platform.
+
+== 1.6.0
+
+*July 26, 2018*
+
+This release incorporates the following improvements:
+
+* Implemented conversion for OAS 2.0.
+* Updated to AMF Parser v1.7.1.
+* Supporting external files references for JSON and XSD schemas.
+* Supporting inner references for JSON and XSD schemas.
+
+=== Fixes
+
+* Set default base path when the RAML does not provide one.
+* Failing to generate a connector when the API defines a JSON schema using AMF.
+* Failing to resolve a type defined using a trait when using.
+* Failing with duplicated parameters.
+* Failing with elements with the same name within XSD Schemas.
+* Failing when using two security schemes of the same type.
+
+== 1.5.0
+
+*June 28, 2018*
+
+This release adds support for OData Specs, Proxies, and Enums.
+
+=== Fixes
+
+* Fixed string sanitization issues.
 
 == 1.4.1
 
@@ -21,7 +51,7 @@ This is a HotFix release.
 
 *May 24, 2018*
 
-This release includes support for complex multipart requests containing parts with different types. Additionally, it nows supports multilevel objects for sending form URL encoded requests.
+This release includes support for complex multipart requests containing parts with different types. Additionally, it now supports multilevel objects for sending form URL encoded requests.
 
 === Fixes
 

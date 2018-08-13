@@ -54,7 +54,7 @@ image:test1-flow-specific.png[test1-flow-specific]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core" version="EE-3.7.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
     <munit:config name="munit" doc:name="MUnit configuration"/>
@@ -232,7 +232,7 @@ image::using-munit-in-anypoint-studio-1e4ee.png[]
 
 If you choose so, you can disable the coverage report generation from your project's run configuration.
 
-Right click in your Package Explorer, and choose *Run As* and *Run Configurations...*, Select your munit xml file to access your suite's configuration, and deselect the "Run coverage" option under your Coverage Settings.
+Right click in your Package Explorer, and choose *Run As* and *Run Configurations...*, Select your munit XML file to access your suite's configuration, and deselect the "Run coverage" option under your Coverage Settings.
 
 image::using-munit-in-anypoint-studio-2cd78.png[]
 

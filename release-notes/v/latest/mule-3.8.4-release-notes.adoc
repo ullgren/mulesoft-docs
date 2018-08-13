@@ -125,7 +125,7 @@ See link:/release-notes/runtime-manager-agent-release-notes[Runtime Manager Agen
 | MULE-11274 | MVEL optimizer does not refresh when the payload type changes
 | MULE-11271 | Fix: Multiple Quartz connectors register quartz scheduler with the same name.
 | MULE-11266 | Fix: Text file object store does not update persistent file stored record according to expiration policy.
-| MULE-11240 | Apply changes from CXF-7162 (Inconsistent reading of formatted xml when validating schema)
+| MULE-11240 | Apply changes from CXF-7162 (Inconsistent reading of formatted XML when validating schema)
 | MULE-11206 | Prevent possible hash collision attacks in Java 7
 | MULE-11204 | Memory leak on mule db module on high load scenario when streaming is enabled
 | MULE-11147 | Retry HTTP requests where connection has become stale since obtaining it from connection pool
@@ -160,7 +160,7 @@ See link:/release-notes/runtime-manager-agent-release-notes[Runtime Manager Agen
 | MULE-11110 | Fix: fileAge of Connector is replaced by fileAge of endpoint
 | MULE-11080 | Add support to auto convert Strings to CLOB values
 | MULE-11079 | Fix: Set Payload doesn't work correctly with special characters in a variable value.
-| MULE-11022 | Http Conficts with Wildcard in the middle of the path.
+| MULE-11022 | Http Conflicts with Wildcard in the middle of the path.
 | MULE-11008 | Fix: JsonData doesn't have to implement Serializable
 | MULE-10986 | Fix conflict Similar HTTP Listener Path with Wildcards
 | MULE-10979 | Remove System Properties Configuration

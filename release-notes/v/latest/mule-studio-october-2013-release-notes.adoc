@@ -46,7 +46,7 @@ n/a | n/a
 * *DataMapper Runtime Performance Improvement:* Improvements to the DataMapper runtime mean better runtime performance when working with tree-structured data formats such as XML, map, JSON and POJO. Further, the new in-memory cache property enables fast and performant memory caches in order to speed up the task of generating data structures.
 * link:/mule-user-guide/v/3.7/poll-reference[*Simplified Poll Debugging:*] Studio's Visual Debugger now offers the ability to pause and resume polling in debug mode to improve the user experience while testing and debugging with polls. 
 * *Improved Environment Management in CloudHub:* CloudHub administrators can now move applications between environments.
-* *Anypoint Service Registry Service Auto-Discovery:* You can now configure your Mule Studio applications to be automatically registered by the Anypoint agent to your Anypoint Service Registry account. 
+* *Anypoint Service Registry Service Autodiscovery:* You can now configure your Mule Studio applications to be automatically registered by the Anypoint agent to your Anypoint Service Registry account. 
 * *Anypoint Connectors Compatibility:* The majority of connectors available on MuleSoft's http://www.mulesoft.org/connectors[Anypoint Connectors website] are compatible with CloudHub Mule Runtime (October 2013), although not all connectors support DataSense. Refer to the complete list of link:/anypoint-studio/v/5/using-perceptive-flow-design[DataSense-enabled] connectors.
 * *SAP Transport*: version 2.2.0 supports DataSense.
 
@@ -196,7 +196,7 @@ In imported projects including both JDBC and a 3.5 connector in the classpath, c
 |STUDIO-3628
 |Add A Way To make an editor force save
 |STUDIO-3648
-|Data Mapper Should support xml metadata model
+|Data Mapper Should support XML metadata model
 |STUDIO-3650
 |Update Jetty connector editor
 |STUDIO-3651
@@ -276,7 +276,7 @@ In imported projects including both JDBC and a 3.5 connector in the classpath, c
 |STUDIO-3515
 |APIkit: APIkit router component is adding non required empty fields in the xml
 |STUDIO-3519
-|Query loses selected fileds when opened and closed without changing anything
+|Query loses selected fields when opened and closed without changing anything
 |STUDIO-3523
 |New maven project has a mule ee repository dependency
 |STUDIO-3526
@@ -348,7 +348,7 @@ In imported projects including both JDBC and a 3.5 connector in the classpath, c
 |STUDIO-3645
 |DataMapper: after saving a mapping DataMapper still ask me to save the changes
 |STUDIO-3646
-|Data Mapper Should Support Implementaion Class
+|Data Mapper Should Support Implementation Class
 |STUDIO-3649
 |Update Legacy Modernization example to use MEL expression instead of old-style expression
 |STUDIO-3658
@@ -480,7 +480,7 @@ In imported projects including both JDBC and a 3.5 connector in the classpath, c
 |STUDIO-3810
 |Query Builder: problem when parsing advanced filters in the query
 |STUDIO-3813
-|When having error markers and modifying the xml the mflow is not updated
+|When having error markers and modifying the XML the mflow is not updated
 |STUDIO-3816
 |DataSense: problem when retrieving metadata and the cache it's empty and there were not changes in the editor (importing a project)
 |STUDIO-3823

@@ -133,7 +133,7 @@ If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint S
 
 == Migration Guide
 
-Studio 7.1 only supports Mule 4.x projects. The structure of the project, export format, xml and scripting language are different. +
+Studio 7.1 only supports Mule 4.x projects. The structure of the project, export format, XML and scripting language are different. +
 Users must migrate Mule 3 projects to Mule 4 manually, before they can be used in Studio 7. See the Mule migration guide for more information.
 
 Workspaces created using Anypoint Studio 6.x or below are not compatible with Anypoint Studio 7 workspaces.
@@ -144,7 +144,7 @@ Workspaces created using Anypoint Studio 6.x or below are not compatible with An
 
 * Some existing features in Studio 6.x are not yet supported in Studio 7.1: Custom Policies, API Sync, Anypoint Private Cloud.
 * Anypoint Studio uses your configured default browser to display web content such as Exchange and the Runtime Manager UI when deploying an application to Anypoint Platform. If your default internet browser does not display this content correctly, you can configure Anypoint Studio to use a Mozilla/XULRunner runtime environment as the underlying renderer for the Web UI. +
-Follow the link:/anypoint-studio/v/7/faq-default-browser-config[FAQ: Troubleshooting Issues with Your Default OS Browser] for more details.
+Follow the link:/anypoint-studio/v/7.1/faq-default-browser-config[FAQ: Troubleshooting Issues with Your Default OS Browser] for more details.
 * When referencing a RAML spec using Json Schema draft 3, DataSense fails. STUDIO-10033
 * Copybook import fails with no message. STUDIO-10206
 * Copybook import file not copied to project. STUDIO-10207
@@ -158,6 +158,13 @@ Follow the link:/anypoint-studio/v/7/faq-default-browser-config[FAQ: Troubleshoo
 * Studio hangs when trying to open a big sample data file in DataWeave STUDIO-10523
 * When setting WSC, it does not trigger datasense and not update metadata tree automatically STUDIO-10523
 * Datasense/Runtime not working correctly through proxy on connectors using TCP/IP or connectors which don’t yet support it STUDIO-10377
+* Using the "Validate" option in your Mule configuration files is not supported. +
+In your Package Explorer view, when right-clicking your Mule configuration file and selecting *Validate*, Studio runs a non-supported validation inherited from Eclipse. It is not recommended to use this feature. +
+You can choose to disable these validators:
++
+** *At Workspace level*: By clicking *Preferences*, *Validation*, and disabling "Manual" and "Build" checkbox for *XML Schema Validator* and *XML Validator*.
+** *At Project level*: By righ-clicking on your project in your Package Explorer View, select *Properties*, *Validation*, and disabling "Manual" and "Build" checkbox for *XML Schema Validator* and *XML Validator*.
+
 
 
 === Enhancement Requests
@@ -182,7 +189,7 @@ Follow the link:/anypoint-studio/v/7/faq-default-browser-config[FAQ: Troubleshoo
 * STUDIO-10610 - Make Mule Server 4.1.1 feature update the Mule 4.1.0 runtime for 7.1.1 (GA) release.
 * STUDIO-10622 - Update Mule depdendencies to 4.1.1.
 * STUDIO-10625 - Add support for global property element.
-* STUDIO-10626 - Update Import lables to improve the UX between Flow Designer and Studio.
+* STUDIO-10626 - Update Import labels to improve the UX between Flow Designer and Studio.
 
 
 == Support

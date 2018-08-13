@@ -101,7 +101,7 @@ The bundled Tomcat version is now upgraded to 7.0.51 and JRE is upgraded to 7.0.
 === 7.0.2 Bug Fixes
 
 * [https://www.mulesoft.org/jira/browse/TCAT-916[TCAT-916]] - Webapps can be deployed to empty Server group.
-* [https://www.mulesoft.org/jira/browse/TCAT-987[TCAT-987]] - Slow console/timeouts and continous exceptions
+* [https://www.mulesoft.org/jira/browse/TCAT-987[TCAT-987]] - Slow console/timeouts and continuous exceptions
 * [https://www.mulesoft.org/jira/browse/TCAT-1027[TCAT-1027]] - On Deployments, you cannot change the name of deployable application from the repo.
 * [https://www.mulesoft.org/jira/browse/TCAT-1048[TCAT-1048]] - On Dashboard, Webapp status, checkboxes of deployed webapps are cleared each 10 seconds.
 * [https://www.mulesoft.org/jira/browse/TCAT-1145[TCAT-1145]] - ErrorPanel shows link to "Error message details". On clicking it just displays "null"
@@ -147,7 +147,7 @@ We've tweaked the loggers so as to suppress the noisy Lucene index messages. You
 * [http://www.mulesoft.org/jira/browse/TCAT-1054[TCAT-1054]] - On Dashboard, Server Metrics, system does not allow to add "Avg Response Time" and/or "Error Count" portlets.
 * [http://www.mulesoft.org/jira/browse/TCAT-1057[TCAT-1057]] - Tcat 7.x build on RED because issues with installer module.
 * [http://www.mulesoft.org/jira/browse/TCAT-1058[TCAT-1058]] - System does not allow to re pair a server.
-* [http://www.mulesoft.org/jira/browse/TCAT-1060[TCAT-1060]] - Server auto-discovering does not work.
+* [http://www.mulesoft.org/jira/browse/TCAT-1060[TCAT-1060]] - Server autodiscovering does not work.
 * [http://www.mulesoft.org/jira/browse/TCAT-1063[TCAT-1063]] - On Repository, error message when deleting apps used on deploys is incorrect.
 * [http://www.mulesoft.org/jira/browse/TCAT-1064[TCAT-1064]] - On Rest API, system does not create server group.
 * [http://www.mulesoft.org/jira/browse/TCAT-1069[TCAT-1069]] - On Servers, unable to register a server successfully using IBM JDK.

@@ -1,11 +1,13 @@
 = Examples
 :keywords: b2b, portal, partner, manager, environments
 
+NOTE: Current Anypoint Partner Manager solutions will continue to be supported in accordance with the https://www.mulesoft.com/legal/support-maintenance-terms[Product Support and Maintenance Terms] but will not be available for new customers or upgrades. Contact your MuleSoft representative for more information on MuleSoft's B2B solutions.
+
 This page identifies examples of  link:/anypoint-b2b/anypoint-partner-manager[Anypoint Partner Manager] in use.
 
 For conceptual information, see link:/anypoint-b2b/key-concepts[Key Concepts].
 
-For information about the procedures you would use to implement a given example, see link:/anypoint-b2b/partner-configuration[Configure Trading Parners] and link:/anypoint-b2b/transaction-monitoring[Transaction Monitoring].
+For information about the procedures you would use to implement a given example, see link:/anypoint-b2b/partner-configuration[Configure Trading Partners] and link:/anypoint-b2b/transaction-monitoring[Transaction Monitoring].
 
 
 == End-to-End Use Case
