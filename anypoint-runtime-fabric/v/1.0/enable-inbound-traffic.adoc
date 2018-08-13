@@ -56,7 +56,7 @@ In this section, we’ll include your certificate-key pair in a TLS context and 
 .. Scroll to the bottom of the page and click the Save button. You can ignore the other options.
 . *Important: After saving your TLS context, click the back button labeled “Secret Groups” in the sidebar on the left, and then click the Finish button for your secret group. This makes it available to select for your Runtime Fabric.*
 
-raffic
+== Enable Inbound Traffic
 
 In this section, we’ll apply the TLS context you created to your Runtime Fabric so it can securely accept incoming traffic.
 
