@@ -1,11 +1,10 @@
 = Network and Port Requirements for Anypoint Runtime Fabric
-:noindex:
 
 This topic describes the network settings and port settings required to install and run Anypoint Runtime Fabric.
 
 == Required Port Settings
 
-The following table lists the ports that must be accessible when running Anypoint Runtime Fabric. 
+The following table lists the ports that must be accessible when running Anypoint Runtime Fabric.
 
 [%header%autowidth.spread]
 |===
@@ -44,7 +43,7 @@ The following table lists the ports that must be accessible when installing Anyp
 
 The following are the network settings required for Anypoint Runtime Fabric:
 
-* Outbound access to download the runtime images from one of the following endpoints: 
+* Outbound access to download the runtime images from one of the following endpoints:
 ** US control plane: `ecr.us-east-1.amazonaws.com` on port 443.
 ** EU control plane: `ecr.eu-central-1.amazonaws.com` on port 443.
 * A subnet with at least 300 IP addresses allottable, or more depending on the number of applications and API gateways running.

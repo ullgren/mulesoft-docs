@@ -1,5 +1,4 @@
 = Enable Inbound Traffic on Anypoint Runtime Fabric
-:noindex:
 
 Anypoint Runtime Fabric includes built-in load balancing capabilities to manage inbound traffic to its Mule applications and API gateways. Traffic is balanced across multiple replicas of your application, which by default reside across different worker VMs.
 

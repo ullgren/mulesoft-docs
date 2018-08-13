@@ -1,5 +1,4 @@
 = Deploy an API Proxy to Runtime Fabric
-:noindex:
 
 == Before you Begin
 

@@ -1,5 +1,4 @@
 =  Anypoint Runtime Fabric Workflow
-:noindex:
 
 This topic provides a high-level overview of the workflow for installing, configuring, and using Anypoint Runtime Fabric. If you are new to Anypoint Runtime Fabric, please read this topic.
 
