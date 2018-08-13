@@ -61,6 +61,13 @@ _Result_: Runtime Manager will display a status message confirming the applicati
 
 For newly deployed applications, the status will initially display as *Starting*. The status will update to *Started* if the application is successful. Monitor the application status to ensure that it starts successfully.
 
+== Verification
+
+To test inbound traffic for deployed applications, a request can be sent using the IP address along with a host header set to the domain. The host header depends on the structure of the App URL.
+
+* An App URL with the format of _{app-name}.domain.com_ will use the following request header format: `Host: {app-name}.domain.com`. Here’s an example cURL command to verify: `curl -Lvk -XGET https://{ip-address}/{path} -H 'Host: {app-name}.domain.com'`
+* An App URL with domain.com/{app-name}_ will will use the following request header format: `Host: domain.com`. Here’s an example cURL command to verify: `curl -Lvk -XGET https://{ip-address}/{app-name}/{path} -H 'Host: domain.com'`
+
 == Common Issues
 
 If your application remains in the *Starting* status for several minutes, this may be due to specifying a lower amount of resources. It's common for applications to take several minutes to start up when selecting 0.3 cores or lower.
