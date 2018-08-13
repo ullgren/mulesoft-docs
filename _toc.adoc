@@ -8,6 +8,7 @@
 * link:api-functional-monitoring[API Functional Monitoring]
 * link:api-manager[API Manager]
 * link:runtime-manager[Runtime Manager]
+* link:anypoint-runtime-fabric[Anypoint Runtime Fabric]
 * link:access-management[Access Management]
 * link:mule-user-guide[Mule Runtime 3.x]
 * link:mule4-user-guide[Mule Runtime 4.x]
