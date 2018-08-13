@@ -89,4 +89,4 @@ On-premise deployments of Mule applications involve installing a version of the 
 On Anypoint Runtime Fabric, each Mule application and API gateway runs with their own Mule runtime, and in their own container. Each application deployment specifies the amount of resources the container has access to. This enables Mule applications to horizontally scale across VMs without relying on dependencies, and safeguards each application from competing with another's resources on the same VM.
 
 == See Also
-link:anypoint-runtime-fabric/v/1.0/getting-started[Before You Begin Working with Anypoint Runtime Fabric]
+link:/anypoint-runtime-fabric/v/1.0/getting-started[Before You Begin Working with Anypoint Runtime Fabric]
