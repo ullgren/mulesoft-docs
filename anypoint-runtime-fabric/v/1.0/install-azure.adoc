@@ -76,7 +76,7 @@ You'll need a private and public key as a PEM file to provision the VMs. This is
 |Variable | Description | Example
 | `Public Key` | The public key string. This will enable you to SSH into each VM with your associated private key. | `ssh rsa ...`
 | `Anypoint Authentication Token` | An active Anypoint authentication token, available on the Create Runtime Fabric page. | `Bearer 626d7810-0730-498b-bd48-544490c2226b`
-| `Anypoint Broker Region` | The Anypoint broker region you're registering to, available on the Create Runtime Fabric page. | `Bearer 626d7810-0730-498b-bd48-544490c2226b`
+| `Anypoint Broker Region` | The Anypoint broker region you're registering to, available on the Create Runtime Fabric page. | `us-east-1`
 | `Anypoint Organization ID` | The ID for your Anypoint organization, available on the Create Runtime Fabric page. | `2f99d26-a3c2-4023-b303-5528sdd5v022`
 | `Anypoint Control Plane Host` | The Anypoint control plane you're registering to, available on the Create Runtime Fabric page. | `anypoint.mulesoft.com`
 | `Installer URL` | The URL of the Runtime Fabric installation package, available on the Create Runtime Fabric page. | `runtime-fabric.s3.amazonaws.com/...`
