@@ -1,6 +1,6 @@
 // TOC File
 
-* link:/anypoint-runtime-fabric/v/1.0/index[About Anypoint Runtime Fabric]
+* link:/anypoint-runtime-fabric/v/1.0/index[Anypoint Runtime Fabric]
 ** link:/anypoint-runtime-fabric/v/1.0/getting-started[Before You Begin Working with Anypoint Runtime Fabric]
 ** link:/anypoint-runtime-fabric/v/1.0/overview[Anypoint Runtime Fabric Workflow]
 ** link:/anypoint-runtime-fabric/v/1.0/installation[Installation Overview]
