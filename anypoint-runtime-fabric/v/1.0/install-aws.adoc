@@ -11,10 +11,10 @@ Before running the installer, ensure that your infrastructure meets the minimum 
 
 Review the link:/anypoint-runtime-fabric/v/1.0/installation[Preparing to Install Anypoint Runtime Fabric] to ensure you are ready to install Runtime Fabric.
 
-Prepare the necessary steps and understand the core concepts prior to installing Runtime Fabric. 
+Prepare the necessary steps and understand the core concepts prior to installing Runtime Fabric.
 
 In addition, ensure the following criteria have been met before beginning the installation:
- 
+
 * Your AWS user has access to create EC2 instances, Disks, VPCs, Security Groups.
 * Your AWS account has enough quota for the infrastructure being provisioned.
 * Your Anypoint user account has the *Manage Runtime Fabrics* permission.
@@ -63,7 +63,7 @@ Some of the values for the variables below are available on the Create Runtime F
 | `installer_url` | The URL of the Runtime Fabric installation package, available on the Create Runtime Fabric page. | `runtime-fabric.s3.amazonaws.com/...`
 | `controllers` | The number of controller VMs to provision. | `3`
 | `workers` | The number of worker VMs to provision. | `3`
-| `mule_license` | The digest (`muleLicenseKey.lic`) of your organization's Mule Enterprise license key. Learn more on how to link:/mule-user-guide/v/3.9/installing-an-enterprise-license[install a Mule Enterprise license]. | 
+| `mule_license` | The digest (`muleLicenseKey.lic`) of your organization's Mule Enterprise license key. Learn more on how to link:/mule-user-guide/v/3.9/installing-an-enterprise-license[install a Mule Enterprise license]. |
 
 |===
 
@@ -74,11 +74,11 @@ There are a couple of methods to run the Terraform script:
 * If you have Terraform installed on your machine, use the native terraform method.
 ** Check the version of terraform installed is `0.11.7` or higher by running `terraform --version` on your terminal.
 * If you do not have Terraform installed, but have Docker installed, use the Docker method.
-* If you do not have Terraform or Docker installed, pick your most comfortable option. 
+* If you do not have Terraform or Docker installed, pick your most comfortable option.
 
 ==== Terraform State Files
 
-When running Terraform to provision, a state file is generated to capture the details of the deployment. In the example above, the state file resides under `tf-data/rtf.tfstate`. A separate state file should be created and maintained for each Runtime Fabric infrastructure creation. The state file should be referenced when modifying or destroying the infrastructure. 
+When running Terraform to provision, a state file is generated to capture the details of the deployment. In the example above, the state file resides under `tf-data/rtf.tfstate`. A separate state file should be created and maintained for each Runtime Fabric infrastructure creation. The state file should be referenced when modifying or destroying the infrastructure.
 
 Regardless of which option you choose to run the Terraform, keep the state file in a safe place. You'll need to reference it when making changes to this deployment, such as when scaling the number of worker or controller VMs.
 
@@ -117,7 +117,7 @@ terraform apply \
 
 ==== Run using Docker
 
-This method is preferred if you don't have Terraform installed on your machine. 
+This method is preferred if you don't have Terraform installed on your machine.
 
 . Open a terminal/shell on the machine containing the Terraform script.
 . Verify your current directory is the unzipped directory. When running `dir` command, you should see the `aws` directory show up, along with other directories (`azure`, `manual`).
@@ -150,10 +150,10 @@ docker run -it -v $(pwd):/src -w /src/aws \
   -state=tf-data/rtf.tfstate
 ----
 
-This step will execute the Terraform script to provision the infrastructure and run the installation script on each VM. 
+This step will execute the Terraform script to provision the infrastructure and run the installation script on each VM.
 The installer VM will download the installer package, unpack it and begin installation. The other VMs will wait for the installer VM to progress with installation until it's able to make the installer files transferrable. Each VM will then transfer the files from the installer VM and carry out their own installation procedure.
 
-When installation has been completed, a cluster will be formed across all VMs. The installer VM will then carry out the registration step using the Anypoint Organization ID, token, and region specified. 
+When installation has been completed, a cluster will be formed across all VMs. The installer VM will then carry out the registration step using the Anypoint Organization ID, token, and region specified.
 
 After registration has completed, you'll see Runtime Fabric in Anypoint Runtime Manager, under the Runtime Fabrics tab. The installation script on the installer VM will proceed to insert the Mule Enterprise license digest in Runtime Fabric.
 

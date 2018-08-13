@@ -135,7 +135,7 @@ gravity status
 
 It's useful to monitor the installation on the installer VM to verify all pre-flight checks have passed; if an error were to occur during installation, it's likely to be visible by viewing the installer VM's log output.
 
-When the `foreground` parameter is applied to the `init.sh` script, logs are outputted to the user for realtime feedback on the installation. If this parameter was omitted, logs are sent to a specific location on each VM. 
+When the `foreground` parameter is applied to the `init.sh` script, logs are outputted to the user for realtime feedback on the installation. If this parameter was omitted, logs are sent to a specific location on each VM.
 
 To view the progress during the installation, you can tail the output log on each VM:
 
