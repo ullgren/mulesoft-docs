@@ -14,7 +14,7 @@ version: v2
 metadata:
   name: smtp
 spec:
-  host: smtp.host
+  host: <smtp host>
   port: <smtp port>
   username: <username>
   password: <password>
