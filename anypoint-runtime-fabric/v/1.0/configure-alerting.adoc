@@ -65,5 +65,5 @@ The following are some of the alerts built-in to Anypoint Runtime Fabric:
 
 == See Also
 
-* link:/anypoint-runtime-fabric/v/1.0/configure-alerting[Configure Alerting on Anypoint Runtime Fabric]
+* link:/anypoint-runtime-fabric/v/1.0/configure-log-forwarding[Configure Log Forwarding on Anypoint Runtime Fabric]
 * link:/anypoint-runtime-fabric/v/1.0/deploy-to-runtime-fabric[Deploy a Mule Application to a Runtime Fabric]

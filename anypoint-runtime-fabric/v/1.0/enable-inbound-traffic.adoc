@@ -192,4 +192,5 @@ This feature is also helpful for reducing the quantity of logs when you need to 
 
 == See Also
 
-* link:/anypoint-runtime-fabric/v/1.0/deploy-to-runtime-fabric[Deploy a Mule Application to Anypoint Runtime Fabric]
+* link:/anypoint-runtime-fabric/v/1.0/deploy-resource-allocation[Determine resource allocation on Anypoint Runtime Fabric]
+* link:/anypoint-runtime-fabric/v/1.0/deploy-to-runtime-fabric[Deploy a Mule application to Anypoint Runtime Fabric]

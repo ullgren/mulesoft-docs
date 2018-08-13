@@ -183,7 +183,7 @@ You can tail the same log on each VM to view its progress.
 
 When the installation completes successfully, the file `/opt/anypoint/runtimefabric/init-succeeded` is created.
 
-== Next steps
+== Next Steps
 
 Before deploying applications on Anypoint Runtime Fabric, you'll need to perform the following steps:
 

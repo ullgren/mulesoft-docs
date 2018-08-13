@@ -26,6 +26,8 @@ After installing Runtime Fabric, you must perform additional configuration proce
 +
 * link:/anypoint-runtime-fabric/v/1.0/enable-inbound-traffic[Enable Inbound Traffic for Anypoint Runtime Fabric]
 * link:/anypoint-runtime-fabric/v/1.0/configure-log-forwarding[Set up Log Forwarding on Anypoint Runtime Fabric]
+* link:/anypoint-runtime-fabric/v/1.0/configure-alerting[Set up Alerting on Anypoint Runtime Fabric]
+* link:/anypoint-runtime-fabric/v/1.0/using-opscenter[Access Ops Center on Anypoint Runtime Fabric]
 
 . Deploy an Application
 +

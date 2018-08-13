@@ -14,4 +14,5 @@
 *** link:/anypoint-runtime-fabric/v/1.0/configure-alerting[Configure Alerting on Anypoint Runtime Fabric]
 ** link:/anypoint-runtime-fabric/v/1.0/deploy-resource-allocation[Determine Application Resource Allocation on Anypoint Runtime Fabric]
 ** link:/anypoint-runtime-fabric/v/1.0/deploy-to-runtime-fabric[Deploy a Mule Application to Anypoint Runtime Fabric]
-** link:proxy-deploy-runtime-fabric[Deploy an API Proxy to Anypoint Runtime Fabric]
+** link:/anypoint-runtime-fabric/v/1.0/proxy-deploy-runtime-fabric[Deploy an API Proxy to Anypoint Runtime Fabric]
+** link:/anypoint-runtime-fabric/v/1.0/using-opscenter[Using Ops Center on Anypoint Runtime Fabric]
