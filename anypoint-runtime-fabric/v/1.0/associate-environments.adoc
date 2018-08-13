@@ -1,0 +1,7 @@
+= Associate Environments to Runtime Fabric
+
+Before using your Runtime Fabric, you must associate it with one or more environments.
+
+. Navigate to Runtime Manager, select the Runtime Fabric tab, then select the Runtime Fabric based on the name used during registration.
+. On the Environments tab, select the environment you want to associate with this Runtime Fabric and click Add.
+. Click Apply to confirm the changes.
