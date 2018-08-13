@@ -6,22 +6,22 @@ Anypoint Runtime Fabric is a container service built to run Mule applications an
 
 == Overview
 
-To begin installing Anypoint Runtime Fabric, download a ZIP file containing scripts based on the infrastructure provider. During installation, the installation package downloads to a single controller VM that serves as the controller of the installation. This VM is called the installer VM. 
+To begin installing Anypoint Runtime Fabric, download a ZIP file containing scripts based on the infrastructure provider, located under the Runtime Fabrics section in Runtime Manager. During installation, the installation package is downloaded to a VM that serves as the leader of the installation. In this document, this VM is referred to as the installer VM. After installation, it will serve the same function as a controller VM.
 
 Setting up Runtime Fabric occurs in the following steps:
 
 . Provision and configure infrastructure
 . Install & register Runtime Fabric
-. link:/anypoint-runtime-fabric/v/1.0/configure-log-forwarding.html[Configure log forwarding]
-. link:/anypoint-runtime-fabric/v/1.0/configure-alerting.html[Configure alerting]
-. link:/anypoint-runtime-fabric/v/1.0/associate-environments.html[Associate Runtime Fabric to an Environment]
-. link:/anypoint-runtime-fabric/v/1.0/enable-inbound-traffic.html[Enable Inbound Traffic]
+. link:/anypoint-runtime-fabric/v/1.0/configure-log-forwarding[Configure Log Forwarding]
+. link:/anypoint-runtime-fabric/v/1.0/configure-alerting[Configure Alerting]
+. link:/anypoint-runtime-fabric/v/1.0/associate-environments[Associate Runtime Fabric to an Environment]
+. link:/anypoint-runtime-fabric/v/1.0/enable-inbound-traffic[Enable Inbound Traffic]
 
 == Infrastructure 
 
 It is important to allocate the infrastructure based on the documented system requirements to ensure reliable operation of Runtime Fabric. The installation process fails if the minimum requirements have not been met.
 
-The default behavior of the AWS and Azure provisioning scripts creates a set of virtual machines and disks defined by the minimum requirements. It also creates a private network with the required network ports configured. This is optimal when evaluating Runtime Fabric before integrating within your main network. You may need to consult with your network administrator to determine if the default behavior is compatible. You may need to modify the provisioning scripts to accommodate your organization's requirements.
+The default behavior of the AWS and Azure provisioning scripts creates a set of virtual machines and disks defined by the minimum requirements. It also creates a private network with the required network ports configured. This is optimal when evaluating Runtime Fabric before integrating within your primary network. You may need to consult with your network administrator to determine if the default behavior is compatible. You may need to modify the provisioning scripts to accommodate your organization's requirements.
 
 The disks required to run Anypoint Runtime Fabric are used for the following:
 
@@ -29,18 +29,18 @@ The disks required to run Anypoint Runtime Fabric are used for the following:
 * Each controller and worker VM requires a minimum of 250 GiB dedicated disk with at least 1000 IOPS for Docker overlay and other internal services.
 
 [NOTE]
-link:/anypoint-runtime-fabric/v/1.0/install-sys-reqs[Verify System Requirements for Anypoint Runtime Fabric] before begining the installation.
+link:/anypoint-runtime-fabric/v/1.0/install-sys-reqs[Verify System Requirements for Anypoint Runtime Fabric] before beginning the installation.
 
 == Install and Register
 
-Anypoint Runtime Fabric is configured to run as a cluster across multiple virtual machines. Each VM  acts as one of two roles:
+Anypoint Runtime Fabric is configured to run as a cluster across multiple virtual machines. Each VM acts as one of two roles:
 
 * Controller VMs are dedicated to operate and run Runtime Fabric services. The internal load balancer also runs within these VMs.
 * Worker VMs are dedicated to run Mule applications.
 
 One controller VM acts as a leader during the installation. This VM downloads the installer and makes it accessible to each other VM on port 32009. Other VMs copy the installer files from the installer VM, perform the installation, and join the installer VM to form a cluster.
 
-During the installation, a set of pre-flight checks run to verify the minimum hardware, operating system, and network requirements for Runtime Fabric link:./install-sys-reqs.adoc[as defined]. If these requirements are not met, the installer fails.
+During the installation, a set of pre-flight checks run to verify the minimum hardware, operating system, and network requirements for Runtime Fabric link:/anypoint-runtime-fabric/v/1.0/install-sys-reqs[as defined]. If these requirements are not met, the installer will fail.
 
 The installation process combines the following steps:
 
@@ -86,7 +86,7 @@ Anypoint Runtime Fabric can be shared across multiple environments. After instal
 
 Production applications must run in a separate instance of Runtime Fabric from non-production applications. 
 
-By default, inbound traffic is disabled to prevent consuming unnecessary resources. If API gateways or Mule applications listen on inbound connections, inbound traffic must be enabled. Before enabling, a valid TLS certificate must be provided. The certificate should require a passphrase and be set with a Common Name which is used as the domain for each deployed application on Runtime Fabric.
+By default, inbound traffic is disabled to prevent consuming unnecessary resources. If API gateways or Mule applications listen on inbound connections, inbound traffic must be enabled. Before enabling, a valid TLS certificate must be provided. The certificate should require a passphrase and be set with a Common Name which is used as the domain for each deployed application on Runtime Fabric. If the Common Name contains a wildcard, the endpoint for each deployed application will take the form `{app-name}.{common-name}`; otherwise, the endpoint will take the form `{common-name}/{app-name}`.
 
 == See Also
 
@@ -95,3 +95,5 @@ By default, inbound traffic is disabled to prevent consuming unnecessary resourc
 * link:/anypoint-runtime-fabric/v/1.0/install-aws[Install Runtime Fabric on AWS]
 * link:/anypoint-runtime-fabric/v/1.0/install-azure[Install Runtime Fabric on Azure]
 * link:/anypoint-runtime-fabric/v/1.0/install-manual[Install Runtime Fabric Manually]
+* link:/anypoint-runtime-fabric/v/1.0/configure-log-forwarding[Configure Log Forwarding on Anypoint Runtime Fabric]
+* link:/anypoint-runtime-fabric/v/1.0/configure-alerting[Configure Alerting on Anypoint Runtime Fabric]

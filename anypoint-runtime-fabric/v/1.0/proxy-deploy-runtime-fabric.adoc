@@ -27,4 +27,4 @@ After deployment, you can manage the deployment from Runtime Manager.
 
 == See Also
 
-* link:/anypoint-runtime-fabric/v/1.0/deploy-to-runtime-fabric[Deploy a Mule Application to a Runtime Fabric]
+* link:/anypoint-runtime-fabric/v/1.0/deploy-to-runtime-fabric[Deploy a Mule Application to Runtime Fabric]
