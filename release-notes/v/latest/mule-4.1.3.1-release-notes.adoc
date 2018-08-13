@@ -18,7 +18,7 @@ Not applicable.
 [%header,cols="15a,85a"] 
 |===
 |Issue |Description
-| https://www.mulesoft.org/jira/browse/SE-9071[SE-9071] | 4.1.3.1, license installation installs the trial license, as a workaround start mule at least once first, using the trial license, or process the license at the license verifier website and install the digested license directly to the /conf directory.
+| https://www.mulesoft.org/jira/browse/SE-9071[SE-9071] | 4.1.3.1, license installation, installs the trial license. As a workaround, start Mule at least once first using the trial license, or process the license at the license verifier website and install the digested license directly to the `/conf` directory.
 |=== 
 
 
@@ -37,7 +37,7 @@ Not applicable.
 |===
 |Issue |Description
 // Fixed Issues 
-| https://www.mulesoft.org/jira/browse/SE-9009[SE-9009] | Mule installLicense issue in 4.1.3 runtime
+| https://www.mulesoft.org/jira/browse/SE-9009[SE-9009] | Mule install License issue in 4.1.3 runtime.
 |=== 
  
 == Compatibility Testing Notes 
