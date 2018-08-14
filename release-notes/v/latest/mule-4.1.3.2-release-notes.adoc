@@ -23,7 +23,7 @@ Not applicable.
 [%header,cols="15a,85a"] 
 |===
 |Issue |Description
-| MULE-15167 | A new property, `mule.deploy.applications` was added to deploy specific applications at startup. The old command-line option, `-app` is still functional but deprecated.
+| MULE-15167 | A new property, `mule.deploy.applications`, was added to deploy specific applications at startup. The old command-line option, `-app`, is still functional but deprecated.
 |=== 
 
  
@@ -33,7 +33,7 @@ Not applicable.
 |===
 |Issue |Description
 // Fixed Issues 
-| https://www.mulesoft.org/jira/browse/SE-9071[SE-9071] | In 4.1.3.1, license installation, installs the trial license. As a workaround, start Mule at least once first using the trial license, or process the license at the license verifier website and install the digested license directly to the `/conf` directory.
+| https://www.mulesoft.org/jira/browse/SE-9071[SE-9071] | In 4.1.3.1, license installation installs the trial license. As a workaround, start Mule at least once first using the trial license, or process the license at the license verifier website and install the digested license directly to the `/conf` directory.
 |=== 
  
 == Compatibility Testing Notes 
