@@ -6,7 +6,9 @@ _Select_
 
 Twilio is an API cloud provider for voice and SMS communications for customers who want to use phone services as marketing leverage. The Mule Twilio Connector allows users to interact with the Twilio API within the Mule Runtime.
 
-== 3.0.1 - August 13, 2018
+== 3.0.1
+
+*August 13, 2018*
 
 === Compatibility
 
@@ -19,7 +21,7 @@ Twilio is an API cloud provider for voice and SMS communications for customers w
 
 === Fixed in this release
 
-* *Operations failing* - Some operations, such as *Send Message*, failed to perform successful calls to the Twilio REST API. This is now fixed.
+* Operations failing - Some operations, such as Send Message, failed to perform successful calls to the Twilio REST API. This is now fixed.
 
 
 == 3.0.0
