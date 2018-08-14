@@ -1,4 +1,4 @@
-= About Anypoint Runtime Fabric
+= Anypoint Runtime Fabric
 
 Anypoint Runtime Fabric is a container service that automates the deployment and orchestration of your Mule applications and gateways. Runtime Fabric runs on customer-managed infrastructure on AWS, Azure, virtual machines (VMs) or bare-metal servers.
 
@@ -87,3 +87,6 @@ Anypoint Runtime Fabric uses the AMQP protocol to connect to Anypoint Cloud Cont
 On-premise deployments of Mule applications involve installing a version of the Mule runtime on a server and deploying one or more applications on the server. Each application shares the resources available to the Mule runtime. Other resources such as certificates or database connections can also be shared via domains.
 
 On Anypoint Runtime Fabric, each Mule application and API gateway runs with their own Mule runtime, and in their own container. Each application deployment specifies the amount of resources the container has access to. This enables Mule applications to horizontally scale across VMs without relying on dependencies, and safeguards each application from competing with another's resources on the same VM.
+
+== See Also
+link:/anypoint-runtime-fabric/v/1.0/getting-started[Before You Begin Working with Anypoint Runtime Fabric]
