@@ -93,7 +93,7 @@ a folder on your computer. You must have a SAP ID to download the libraries.
 +
 *Note:* The file types for each library depend on your operating system:
 +
-** Windows: sapidoc3.dll, sapjco3.dll, libsapjco3.dll
+** Windows: sapidoc3.jar, sapjco3.jar, libsapjco3.jar
 ** Mac OS:  sapidoc3.jar, sapjco3.jar, libsapjco3.jnilib
 ** Linux:   sapidoc3.jar, sapjco3.jar, libsapjco3.so
 +
