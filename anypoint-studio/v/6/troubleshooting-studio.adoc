@@ -9,7 +9,7 @@ To configure this:
 . Unzip your package and install it.
 . Locate your `AnypointStudio.ini` file:
 .. On Windows: This file is located within your Anypoint Studio's installation directory.
-.. On Linux: `/usr/lib/anypointstudio/anypointstudio.ini`
+.. On Linux: This file is located within your Anypoint Studio's installation directory.
 .. On OSx: `Applications/AnypointStudio`:
 ... Right click on the AnypointStudio.app package
 ... Select `Show Package Contents`
