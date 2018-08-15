@@ -136,7 +136,7 @@ When streaming, the request does not contain the `Content-Length` header. It c
 
 When requesting a large payload, you can choose to stream the response by setting the `streamResponse` attributes in the HTTP request configuration.
 
-By default, the streamResponse attribute is set to false. +
+By default, the `streamResponse` attribute is set to false. 
 When setting this attribute to true, you enable Mule to handle the response as a stream saving chunks to an in-memory buffer. +
 The buffer size can be configured using the `responseBufferSize` attribute, but its default size is 10Kb.
 
