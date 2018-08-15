@@ -140,7 +140,7 @@ By default, the `streamResponse` attribute is set to false.
 When setting this attribute to true, you enable Mule to handle the response as a stream saving chunks to an in-memory buffer. +
 The buffer size can be configured using the `responseBufferSize` attribute, but its default size is 10Kb.
 
-[source,xml]
+[source,xml,linenums]
 ----
 <http:request-config name="requestConfig">
     <http:request-connection host="localhost" port="8081" streamResponse="true" responseBufferSize="1024"/>
