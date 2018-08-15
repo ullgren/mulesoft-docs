@@ -1,11 +1,10 @@
 = Aggregators Module Reference
 
-An Aggregator is a component that receives some data, processes it to extract some value and then adds that value to a list of aggregated elements. After that, and depending on the configuration, the list of elements will be sent to a processor's chain as the payload.
-
-Generally speaking, the list of aggregated elements will be processed either by a route withing the aggregator itself or in another Mule Flow, through an aggregator listener.
+An Aggregator is a component that receives some data, processes it to extract some value and then adds that value to a list of aggregated elements. After that, and depending on the configuration, the list of elements will be sent to a processors chain as the payload.
 
 Aggregators are pass-through routers, meaning that the same data that is received by the aggregator is going to be processed by the components that follow it. The only modifications are the propagation of variables in case any is set while executing any of the aggregation routes.
 
+When an aggregator releases the stored values, the list of aggregated elements will be processed either by a route within the aggregator itself or in another Mule Flow, through an aggregator listener. All of that dependes on the type and configuration of the aggregator being used.
 
 == Configurations
 
@@ -201,7 +200,7 @@ When the group size or timeout has invalid values (for example, `groupSize < 0`)
 
 `<aggregators:aggregator-listener aggregatorName="exampleAggregator" includeTimedOutGroups="false">`
 
-Once the aggregator that is referenced by the listener completes an aggregation, the listener will be triggered with a list of all the elements. Though the aggregation listener can be used for any kind of aggregator, it is important for time-driven aggregations. Such aggregations are triggered asynchronously and outside an event context, so they do not execute an aggregator route and can only reach components in flows with an aggregator listener as the source.
+Once the aggregator that is referenced by the listener completes an aggregation, the listener will be triggered with a list of all the elements. Though the aggregation listener can be used for any kind of aggregator, it is important for time-driven (Async) aggregations. Such aggregations are triggered asynchronously, so they do not execute an aggregator route and can only reach components in flows with an aggregator listener as the source.
 
 
 ==== Parameters
@@ -244,15 +243,18 @@ For aggregations that complete due to a time period or timeout being reached (As
 
 * If the aggregator has a listener hooked and the listener accepts timed out aggregations, the flow which that listener belongs to will be executed, with the payload being the list of aggregated elements. +
 
-This is very important and should always be present when creating an application that contains an aggregator. +
+This is very important and should always be present when creating an application that contains an aggregator.
+
 As a general rule:
 
 * If the aggregation depends on time, all the logic for processing it should be in a different flow, with an aggregation listener as source.
 * If it depends on a size being reached, the logic can be declared in the `aggregation-complete` route.
 * If it can be both, then a good approach is to:
 ** Add the main logic in a sub-flow with no source. You can check the `isAggregationComplete` attribute to check how the aggregation was released.
-** Add a flow-ref to the main logic flow in the `aggregation-complete` route.
-** Add another flow with an aggregation listener that listens to the aggregator and accepts timed out groups. The listener should be followed by a flow-ref that calls the main logic sub-flow.
+** Add a flow reference to the main logic flow in the `aggregation-complete` route. If the sub-flow is executed by this flow reference, then `isAggregationComplete` will be true.
+** Add another flow with an aggregation listener that listens to the aggregator and accepts timed out groups. The listener should be followed by a flow reference that calls the main logic sub-flow. In this case, `isAggregationComplente` will be false.
+
+
 
 
 
@@ -260,8 +262,8 @@ As a general rule:
 
 The module is developed to work in a cluster out-of-the-box. However, to prevent unexpected behavior, you need to take into account these configuration details:
 
-When a time-driven aggregation is defined and the first event arrives, it is scheduled in the primary node of the cluster. Because new events can arrive in any node of the cluster, you need a way to notify and make the primary node schedule that aggregation.
-To do that, another task in the primary node periodically determines whether it is necessary to schedule a new aggregation.
+When an Async aggregation is defined and the first element arrives, it is scheduled in the primary node of the cluster. Because new values can arrive in any node of the cluster, we need a way to notify and make the primary node schedule that aggregation.
+To do that, another task in the primary node periodically determines whether it is necessary to schedule a new aggregation or not.
 This can lead to a problem if the interval between checks for new aggregation scheduling is much longer than the actual timeout of the aggregation, because the aggregation could be over before it is scheduled, or there might be errors in the time computation.
 
 To avoid this issue, you can configure the frequency at which the primary node checks for new aggregations to be scheduled.
