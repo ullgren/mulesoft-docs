@@ -43,10 +43,6 @@ You should declare your input and output metadata specifying the shape of event 
 Same as with connectors, there are some special cases where flow metadata declaration can be automatically inferred based on related contracts. This is the case of resource flows for API-Kit or SOAP-Kit. In these cases, corresponding API contract is used to infer a metadata contract for a resource flow. +
 As a direct consequence of this, there is no implicit metadata propagation of the whole event context through a flow reference (flow-refs) to a flow. If the flow or sub-flow is expected to be reused, this flow has to declare its data contract in terms of the input and output event.
 
-// _COMBAK:
-// There are some enhancements being developed to provide shortcuts to include parts of call site event into flow data contract.
-//
-// For those cases where flow/subflow is not expected to be reused but to improve legibility of code or issues regarding visualization, there will be a mule processor structure that will act as a logical grouping of code. In this way we could combine the expectation of having full context of use with a graphical collapse of implementation into a group that has a name and summarizes and hides its implementation.
 
 == See Also
 
