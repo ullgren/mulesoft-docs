@@ -347,7 +347,7 @@ Within the global configuration of the connector, add an `oauth:authorization-c
 * The *clientId* and *clientSecret*.
 +
 Use the client ID and client secret you received from Github when registering your application.
-* The *localCallbackUrl* to which the Github authentication server will send the access token once the RO grants you access.
+* The `localCallbackUrl` to which the Github authentication server will send the access token once the RO grants you access.
 
 If you were required to provide a redirect URL when registering your application with Github, this value must match what you provided there.
 
@@ -486,9 +486,9 @@ The link:https://tools.ietf.org/html/rfc6749[OAuth 2.0 specification] describes 
 
 You configure the external redirect URI by setting the attribute `externalCallbackUrl`.
 
-Using `externalCallbackUrl` is particularly useful for deploying applications to CloudHub, for example. In the configuration of authentication, you need to specify the localCallbackUrl in the following format:
+Using `externalCallbackUrl` is particularly useful for deploying applications to CloudHub, for example. In the configuration of authentication, you need to specify the `localCallbackUrl` in the following format:
 
-For example, the localCallbackUrl is http://localhost:8082/callback in the link:#creating-the-mule-client-app[previous example]:
+For example, the `localCallbackUrl` is http://localhost:8082/callback in the link:#creating-the-mule-client-app[previous example]:
 
 To create the endpoint for CloudHub, Mule has to create an endpoint for CloudHub in a different format. For example:
 
