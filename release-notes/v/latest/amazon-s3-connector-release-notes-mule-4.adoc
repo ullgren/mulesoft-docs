@@ -26,7 +26,7 @@ The Amazon S3 connector is compatible with:
 
 === Features
 
-* *Triggers* - You can now start a flow with the NetSuite Connector every time an object of a specific type is created, updated, or deleted.
+* *Triggers* - You can now start a flow with the Amazon S3 Connector every time an object of a specific type is created, updated, or deleted.
 
 
 
