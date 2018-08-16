@@ -43,7 +43,7 @@ Please note that only the payload returned by the invoked flow will be assigned.
 [WARNING]
 ====
 Always bear in mind that being a functional language, DataWeave expects the invocation of the `lookup` function to not have side effects.
-As such, the internal workings of the DataWeave engine may cause a `lookup` function to be invoked more than once, in parallel with other `lookup`s, or not invoked it at all.
+As such, the internal workings of the DataWeave engine may cause a `lookup` function to be invoked in parallel with other `lookup`s, or not invoked it at all.
 
 The suggested way to invoke flows is with the `flow-ref` component, using the `target` attribute to put the result of the flow in a var and then referencing that var from within the DataWeave script. 
 ====
