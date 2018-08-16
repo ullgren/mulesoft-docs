@@ -7,7 +7,7 @@ This section covers the migration of component-specific features, and the table 
 [%header,cols="30,70"]
 |===
 | Mule 3.x Component | Mule 4.0 Replacement
-| All routers  | Use scatter gather instead or execute the operations one after the other with different target attributes and then use DW to merge results.
+| All router  | Use scatter gather instead or execute the operations one after the other with different target attributes and then use DW to merge results.
 | async[‘processingStrategy’] | Async processing strategies are no longer needed with the non-blocking execution engine. Use an “async” scope wrapping all the components if you want them to behave asynchronously.
 | asynchronous-processing-strategy | Async processing strategies are no longer needed with the non-blocking execution engine. Use an “async” scope wrapping all the components if you want them to behave asynchronously.
 | bridge | Removed. Use flows.
@@ -93,7 +93,7 @@ This section covers the migration of component-specific features, and the table 
 | simple-text-file-store | Use object store module extension to create custom stores.
 | singleton-object | Use Java module or Spring module.
 | spring-object | Use Java module or Spring module.
-| synchronous-processing-strategy | The behavior related to flow components execution is the same as flows in 4.x but it doesn't always executed in the same thread as in 3.x.
+| synchronous-processing-strategy | The behavior related to flow components execution is the same as flows in 4.x but it doesn't always execute in the same thread as in 3.x.
 | transactional scope | Replaced with “try” scope.
 | username-password-filter | Removed.
 | validator | Removed.
