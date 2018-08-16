@@ -23,7 +23,7 @@ Active: inactive (dead)
 Docs: man:firewalld(1)
 ----
 
-If `firewalld is not installed, this command returns an error message.
+If firewalld is not installed, this command returns an error message.
 
 == Enabling Forwarding
 
