@@ -2,8 +2,21 @@
 
 This document describes new features and enhancements, known limitations, issues, and fixes for Anypoint Visualizer. See link:/anypoint-visualizer[Anypoint Visualizer] for more information.
 
-== Version 1.0.2
-Date: _July 27, 2018
+== August 21, 2018
+Version: 1.1.0
+
+=== New Features and Enhancements
+
+* Improved node layout to minimize crossing arrows.
+* Improved environment selector
+
+=== Fixed Issues
+
+* Allow special characters as node names
+* Incorrect Node positioning in special circumstances
+
+== July 27, 2018
+Version: 1.0.2
 
 === New Features and Enhancements
 
@@ -24,9 +37,8 @@ Date: _July 27, 2018
 There are no known limitations or workarounds in this release.
 
 
-== Version 1.0.0
-Date:_June 30, 2018_
-
+== June 30, 2018
+Version: 1.0.0
 === New Features and Enhancements
 
 This is the initial release of Anypoint Visualizer. Anypoint Visualizer provides a graphical representation of the APIs, and Mule applications, and third-party systems within your application network.
