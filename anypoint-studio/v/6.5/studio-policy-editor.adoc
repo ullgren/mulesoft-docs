@@ -1,7 +1,7 @@
 = Studio Custom Policy Editor (Beta)
 
-Studio 6.1 (and newer versions of 6.x) grants you the ability to create a *policy project*, under which you can group your *custom API policies* and apply them to your local Studio deployments. +
-This way you can compose, debug and test custom API policies within Studio, using an editor that fully supports and validates custom API policies design.
+Studio 6.1 (and newer versions of 6.x) grants you the ability to create a *policy project*, under which you can group your *custom API policies* and apply them to your local Studio deployments. 
+This way, you can compose, debug, and test custom API policies within Studio, using an editor that fully supports and validates custom API policies design.
 
 [WARNING]
 --
