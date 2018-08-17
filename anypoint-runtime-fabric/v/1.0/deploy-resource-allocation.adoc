@@ -32,13 +32,13 @@ The time it takes to start Mule applications are directly correlated with the am
 
 The amount of resources given to Mule correlate with the performance of your application. Below are approximate values for throughput based on the amount of vCPU cores allocated for a single Mule application performing simple processing on a 10 KB payload.
 
-[%header,cols="4*a"]
+[%header,cols="3*a"]
 |===
-| vCPU Cores | Concurrent Connections | Throughput (TPS) | Avg Response Time (ms)
-| `1.00` | 10 | 600 - 650 | 15
-| `0.50` | 5 | 275 - 320 | 15
-| `0.10` | 1 | 30 - 45 | 25
-| `0.07` | 1 | 10 - 17 | 78
+| vCPU Cores | Concurrent Connections | Avg Response Time (ms)
+| `1.00` | 10 | 15
+| `0.50` | 5 | 15
+| `0.10` | 1 | 25
+| `0.07` | 1 | 78
 
 |===
 
