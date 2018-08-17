@@ -233,11 +233,10 @@ As seen in the configurations, an aggregation can be considered complete based o
 Each time counter associated with an aggregator starts counting from the moment the first message of a group arrives. Once the aggregation is complete, the counter resets and waits for the next element to arrive. +
 For single-group aggregators (time-based and size-based aggregators), there is only one time counter, but for the group-based aggregator, there is one counter per group.
 
-For aggregations that complete because a new element arrives (Sync), at least one of the following things will happen:
+For aggregations completed because a new element arrives (Sync), at least one of the following things will happen:
 
 * If the aggregator was configured with an `aggregation-complete` route, the components inside that route will be executed with the payload being the list of aggregated elements. +
 * If the aggregator has a listener hooked, the flow which that listener belongs to will be executed, with the payload being the list of aggregated elements.
-
 
 For aggregations completed due to a time period or timeout being reached (Async), the only thing that can happen is:
 
