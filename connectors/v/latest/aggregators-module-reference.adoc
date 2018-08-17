@@ -1,10 +1,10 @@
 = Aggregators Module Reference
 
-An Aggregator is a component that receives some data, processes it to extract some value and then adds that value to a list of aggregated elements. After that, and depending on the configuration, the list of elements will be sent to a processors chain as the payload.
+An Aggregator is a component that receives some data, processes it to extract some value and then adds that value to a list of aggregated elements. After that, and depending on the configuration, the list of elements is sent to a set of components.
 
 Aggregators are pass-through routers, meaning that the same data that is received by the aggregator is going to be processed by the components that follow it. The only modifications are the propagation of variables in case any is set while executing any of the aggregation routes.
 
-When an aggregator releases the stored values, the list of aggregated elements will be processed either by a route within the aggregator itself or in another Mule Flow, through an aggregator listener. All of that dependes on the type and configuration of the aggregator being used.
+When an aggregator releases the stored values, the list of aggregated elements is processed either by a route within the aggregator itself or in another Mule Flow, through an aggregator listener. All of that depends on the type and configuration of the aggregator being used.
 
 == Configurations
 
