@@ -235,7 +235,7 @@ For single-group aggregators (time-based and size-based aggregators), there is o
 
 For aggregations that complete because a new element arrives (Sync), at least one of the following things will happen:
 
-* If the aggregator was configured with an `aggregation-complete` route, the processors inside that route will be executed with the payload being the list of aggregated elements. +
+* If the aggregator was configured with an `aggregation-complete` route, the components inside that route will be executed with the payload being the list of aggregated elements. +
 * If the aggregator has a listener hooked, the flow which that listener belongs to will be executed, with the payload being the list of aggregated elements.
 
 
