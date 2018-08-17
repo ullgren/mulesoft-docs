@@ -10,6 +10,23 @@ When an aggregator releases the stored values, the list of aggregated elements i
 
 There is no configuration for Aggregators because the module is based only on operations. Each different type of aggregator is a different operation that configurable through its parameters.
 
+However, there are a couple of common parameters that are worth mentioning beforehand:
+
+* Content: +
+The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation.
+Since all data related to an aggregator is stored in an Object Store, it's really important that the content value is `Serializable`.
+Otherwise, there is no assurance that the module will work properly.
+
+* Object Store: +
+All information related to an aggregator is stored in an Object Store. The type of Object Store should relate to the expected behaviour of the component. +
++
+Generally speaking:
+
+** Persistent Object Store (Default) : More reliable, permits data recovery after restart. Slower
+** In Memory Object Store : Faster. Will lose all the data if the application is restarted.
+
+
+
 == Aggregator Types
 
 There are size-based, time-based, and group-based aggregators.
@@ -252,10 +269,6 @@ As a general rule:
 ** Add the main logic in a sub-flow with no source. You can check the `isAggregationComplete` attribute to check how the aggregation was released.
 ** Add a flow reference to the main logic flow in the `aggregation-complete` route. If the sub-flow is executed by this flow reference, then `isAggregationComplete` will be true.
 ** Add another flow with an aggregation listener that listens to the aggregator and accepts timed out groups. The listener should be followed by a flow reference that calls the main logic sub-flow. In this case, `isAggregationComplente` will be false.
-
-
-
-
 
 == Aggregators in a Cluster
 
