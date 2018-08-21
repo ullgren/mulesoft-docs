@@ -12,6 +12,7 @@
 *** link:partner-manager-connector-release-notes[Partner Manager Connector Release Notes]
 ** link:anypoint-connector-release-notes[Anypoint Connector Release Notes]
 *** link:anypoint-connector-release-notes#mule_4[Connector Release Notes (for Mule 4)]
+**** link:aggregators-module-release-notes[Aggregators Module Release Notes (for Mule 4)]
 **** link:amazon-dynamodb-connector-release-notes-mule-4[Amazon DynamoDB Connector Release Notes (for Mule 4)]
 **** link:amazon-ec2-connector-release-notes-mule-4[Amazon EC2 Connector Release Notes (for Mule 4)]
 **** link:amazon-rds-connector-release-notes-mule-4[Amazon RDS Connector Release Notes (for Mule 4)]
