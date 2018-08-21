@@ -93,6 +93,7 @@ link:/connectors/sap-successfactors-connector[SAP SuccessFactors]
 
 == Mule 4 Modules
 
+* link:/connectors/aggregators-module[Aggregators]
 * link:/connectors/compression-module[Compression]
 * link:/connectors/java-module[Java]
 * link:/connectors/json-module[JSON]

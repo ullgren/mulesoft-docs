@@ -1,11 +1,9 @@
 // Core Connectors 4.0 TOC File
 * link:/[Connectors and Modules (for Mule 4)]
 +
-// NOTE: Removed aggregators doc until release.
-// See https://www.mulesoft.org/jira/browse/DOCS-2440
-//** link:aggregators-module[Aggregators Module]
-//*** link:aggregators-documentation[Aggregators Module Documentation Reference]
-//*** link:aggregator-examples[Aggregator Examples]
+** link:aggregators-module[Aggregators Module]
+*** link:aggregator-examples[Aggregator Examples]
+*** link:aggregators-module-reference[Aggregators Module Reference]
 +
 ** link:/amazon-dynamodb-connector[Amazon DynamoDB Connector]
 *** link:/amazon-dynamodb-connector-reference[Amazon DynamoDB Connector Reference]
