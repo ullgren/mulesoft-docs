@@ -1,13 +1,4 @@
-:toc:               left
-:toc-title:         Aggregators Module
-:toclevels:         2
-:last-update-label!:
-:docinfo:
-:source-highlighter: coderay
-:icons: font
-
-[[aggregators-reference]]
-= Aggregators Module Documentation Reference
+= Aggregators Module Reference
 
 An Aggregator is a pass-through router, meaning that the same message that is processed by the aggregator is going to be processed by the components that follow it. The only modifications are the addition of some message attributes that provide information about the aggregation.
 
@@ -35,13 +26,13 @@ There are size-based, time-based, and group-based aggregators.
     <aggregators:incremental-aggregation>
         ...
     </aggregators:incremental-aggregation>
-    <aggregatos:aggregation-complete>
+    <aggregators:aggregation-complete>
         ...
     </aggregators:aggregation-complete>
 </aggregators:size-based-aggregator>
 ----
 
-It aggregates elements until a pre-defined size is reached, executing the routes and listeners.
+This example aggregates elements until a pre-defined size is reached, executing the routes and listeners.
 
 
 ==== Parameters
@@ -49,14 +40,14 @@ It aggregates elements until a pre-defined size is reached, executing the routes
 [cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
 |======================
 | Name | Type | Description | Default Value | Required
-| Name | String | The name of the aggregator. It can later be referenced by an aggregator listener. | {nbsp}| X{nbsp}
-| Content | Expression | The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation. | #[message] | {nbsp}
-| Max Size | Number | The total number of elements to be aggregated before considering the aggregation complete. | {nbsp} | X{nbsp}
-| Timeout | Number |  A maximum time to wait for the aggregation to complete. If the timeout is reached before the total number of elements is equal to max size, the aggregation is considered complete. A value of `0` is not supported to avoid  timing out the group constantly. | -1(UNLIMITED) | {nbsp}
-| Timeout unit | Time Unit | The time unit in which to measure the timeout. |  SECONDS | {nbsp}
-| Object Store | Object Store |  Either a name to reference a global object store or a definition of a private object store where the aggregated elements will be stored. |  Default Object Store partition. | {nbsp}
-| Aggregation Complete Route | Route | Components chain to execute once the aggregation is complete. | {nbsp} | X{nbsp}
-| Incremental Aggregation Route | Route | Components chain to execute for every new element that is aggregated. The payload is the list of all the elements that have been aggregated from the first one (in this aggregation) to the one that is being aggregated now. | {nbsp} | {nbsp}
+| Name | String | The name of the aggregator. It can later be referenced by an aggregator listener. || x
+| Content | Expression | The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation. | #[message] |
+| Max Size | Number | The total number of elements to be aggregated before considering the aggregation complete. | | x
+| Timeout | Number |  A maximum time to wait for the aggregation to complete. If the timeout is reached before the total number of elements is equal to max size, the aggregation is considered complete. A value of `0` is not supported to avoid  timing out the group constantly. | -1(UNLIMITED) |
+| Timeout unit | Time Unit | The time unit in which to measure the timeout. |  SECONDS |
+| Object Store | Object Store |  Either a name to reference a global object store or a definition of a private object store where the aggregated elements will be stored. |  Default Object Store partition. |
+| Aggregation Complete Route | Route | Components chain to execute once the aggregation is complete. | | x
+| Incremental Aggregation Route | Route | Components chain to execute for every new element that is aggregated. The payload is the list of all the elements that have been aggregated from the first one (in this aggregation) to the one that is being aggregated now. | |
 |======================
 
 
@@ -64,7 +55,7 @@ It aggregates elements until a pre-defined size is reached, executing the routes
 
 * AGGREGATORS:AGGREGATOR_CONFIG
 +
-{nbsp} Whenever maxSize or timeout have invalid values (for example, `maxSize < 0`).
+Whenever maxSize or timeout have invalid values (for example, `maxSize < 0`).
 
 
 [[time-based-aggregator]]
@@ -95,20 +86,20 @@ Aggregates elements until a time period is completed, executing the routes and l
 [cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
 |======================
 | Name | Type | Description | Default Value | Required
-| Name | String | The name of the aggregator. It can later be referenced by an aggregator listener. | {nbsp}| X{nbsp}
-| Content | Expression | The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation. | #[message] | {nbsp}
-| Period | Number |  A time period to wait before considering the aggregation to be complete. | {nbsp} | X{nbsp}
-| Period unit | Time Unit | The time unit in which to measure the time period. |  SECONDS | {nbsp}
-| Max Size | Number | The total number of elements to be aggregated before considering the aggregation to be complete. | -1(UNLIMITED) | {nbsp}
-| Object Store | Object Store |  Either a name to reference a global object store or a definition of a private object store where the aggregated elements will be stored. |  Default Object Store partition. | {nbsp}
-| Incremental Aggregation Route | Route | Components chain to be executed for every new element that is aggregated. The payload is the list of all the elements that have been aggregated from the first one (in this aggregation) to the one that is being aggregated now. | {nbsp} | {nbsp}
+| Name | String | The name of the aggregator. It can later be referenced by an aggregator listener. || x
+| Content | Expression | The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation. | #[message] |
+| Period | Number |  A time period to wait before considering the aggregation to be complete. | | x
+| Period unit | Time Unit | The time unit in which to measure the time period. |  SECONDS |
+| Max Size | Number | The total number of elements to be aggregated before considering the aggregation to be complete. | -1(UNLIMITED) |
+| Object Store | Object Store |  Either a name to reference a global object store or a definition of a private object store where the aggregated elements will be stored. |  Default Object Store partition. |
+| Incremental Aggregation Route | Route | Components chain to be executed for every new element that is aggregated. The payload is the list of all the elements that have been aggregated from the first one (in this aggregation) to the one that is being aggregated now. | |
 |======================
 
 ==== Raises
 
 * AGGREGATORS:AGGREGATOR_CONFIG
 +
-{nbsp} Whenever period or `maxSize` has invalid values (for example, `Period = 0`).
+Whenever period or `maxSize` has invalid values (for example, `Period = 0`).
 
 [[group-based-aggregator]]
 === Group-Based Aggregator
@@ -129,7 +120,7 @@ Aggregates elements until a time period is completed, executing the routes and l
     <aggregators:incremental-aggregation>
         ...
     </aggregators:incremental-aggregation>
-    <aggregatos:aggregation-complete>
+    <aggregators:aggregation-complete>
         ...
     </aggregators:aggregation-complete>
 </aggregators:group-based-aggregator>
@@ -153,36 +144,40 @@ Lastly, because elements that reach group-based aggregators are related to a spl
 [cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
 |======================
 | Name | Type | Description | Default Value | Required
-| Name | String | The name of the aggregator. It can later be used to be referenced by an aggregator listener | {nbsp}| X{nbsp}
-| Content | Expression | The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation. | #[message] | {nbsp}
-| Group Id | Expression | The expression to be evaluated for every new message received in order to get the ID for the group where it should be aggregated. | #[correlationId] | {nbsp}
-| Group Size | Number | The maximum size to assign to the group with the group ID resolved. All messages with the same group ID must have the same group size. If not, only the first resolved group size will be considered correct, and a warning will be logged for every one that does not match it. | #[itemSequenceInfo.sequenceSize] | {nbsp}
-| Eviction Time | Number | The time to remember a group ID once it was completed or timed out (0 means: don't remember, -1: remember forever) | 180 | {nbsp}
-| Eviction Time Unit | Time Unit | The time unit for the Eviction Time. | SECONDS | {nbsp}
-| Timeout | Number |  A maximum time to wait for the aggregation of a group to complete. If the timeout is reached before the total number of elements in that group is equal to the group's size, the aggregation will be considered complete. To avoid constant group timeouts, a value of `0` is not supported. | -1(UNLIMITED) | {nbsp}
-| Timeout unit | Time Unit | The time unit in which to measure the timeout. |  SECONDS | {nbsp}
-| Object Store | Object Store |  Either a name to reference a global object store or a definition of a private object store where the aggregated elements will be stored. |  Default Object Store partition | {nbsp}
-| Aggregation Complete Route | Route |  Components chain to execute once the aggregation is complete. | {nbsp} | X{nbsp}
-| Incremental Aggregation Route | Route | Components chain to execute for every new element that is aggregated. The payload is the list of all the elements that have been aggregated from the first one (in this aggregation) to the one that is being aggregated now. | {nbsp} | {nbsp}
+| Name | String | The name of the aggregator. It can later be used to be referenced by an aggregator listener || x
+| Content | Expression | The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation. | #[message] |
+| Group Id | Expression | The expression to be evaluated for every new message received in order to get the ID for the group where it should be aggregated. | #[correlationId] |
+| Group Size | Number | The maximum size to assign to the group with the group ID resolved. All messages with the same group ID must have the same group size. If not, only the first resolved group size will be considered correct, and a warning will be logged for every one that does not match it. | #[itemSequenceInfo.sequenceSize] |
+| Eviction Time | Number | The time to remember a group ID once it was completed or timed out (0 means: don't remember, -1: remember forever) | 180 |
+| Eviction Time Unit | Time Unit | The time unit for the Eviction Time. | SECONDS |
+| Timeout | Number |  A maximum time to wait for the aggregation of a group to complete. If the timeout is reached before the total number of elements in that group is equal to the group's size, the aggregation will be considered complete. To avoid constant group timeouts, a value of `0` is not supported. | -1(UNLIMITED) |
+| Timeout unit | Time Unit | The time unit in which to measure the timeout. |  SECONDS |
+| Object Store | Object Store |  Either a name to reference a global object store or a definition of a private object store where the aggregated elements will be stored. |  Default Object Store partition |
+| Aggregation Complete Route | Route |  Components chain to execute once the aggregation is complete. | | x
+| Incremental Aggregation Route | Route | Components chain to execute for every new element that is aggregated. The payload is the list of all the elements that have been aggregated from the first one (in this aggregation) to the one that is being aggregated now. | |
 |======================
 
 ==== Raises
 
 * AGGREGATORS:GROUP_COMPLETED
 +
-{nbsp} When a new element has to be added to an already completed group (and the group was not yet evicted).
+When a new element has to be added to an already completed group (and the group was not yet evicted).
++
 * AGGREGATORS:GROUP_TIMED_OUT
 +
-{nbsp} When a new element has to be added to a group that timed out (and the group was not yet evicted).
+When a new element has to be added to a group that timed out (and the group was not yet evicted).
++
 * AGGREGATORS:NO_GROUP_ID
 +
-{nbsp} When the expression that resolves to the group ID returns null.
+When the expression that resolves to the group ID returns null.
++
 * AGGREGATORS:NO_GROUP_SIZE
 +
-{nbsp} When the expression that resolves to the group size returns null.
+When the expression that resolves to the group size returns null.
++
 * AGGREGATORS:AGGREGATOR_CONFIG
 +
-{nbsp} When the group size or timeout has invalid values (for example, `groupSize < 0`).
+When the group size or timeout has invalid values (for example, `groupSize < 0`).
 
 
 == Sources
@@ -200,8 +195,8 @@ Once the aggregator that is referenced by the listener completes an aggregation,
 [cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
 |======================
 | Name | Type | Description | Default Value | Required
-| Aggregator Name | String | The name of the aggregator to listen to. Once that aggregator releases its elements, the listener will be executed. Each listener can only reference one aggregator, and each aggregator can only be referenced by at most one listener. | {nbsp} | X{nbsp}
-| Include Timed Out Groups | Boolean | Indicates whether the listener should be triggered when a group is released due to a timeout. | false | {nbsp}
+| Aggregator Name | String | The name of the aggregator to listen to. Once that aggregator releases its elements, the listener will be executed. Each listener can only reference one aggregator, and each aggregator can only be referenced by at most one listener. | | x
+| Include Timed Out Groups | Boolean | Indicates whether the listener should be triggered when a group is released due to a timeout. | false |
 |======================
 
 == Aggregation Attributes
