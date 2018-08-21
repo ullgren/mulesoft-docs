@@ -12,20 +12,20 @@ There is no configuration for Aggregators because the module is based only on op
 
 However, there are a couple of common parameters that are worth mentioning beforehand:
 
-* Content: +
+* Content:
++
 The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation.
 Since all data related to an aggregator is stored in an Object Store, it's really important that the content value is `Serializable`.
 Otherwise, there is no assurance that the module will work properly.
-
-* Object Store: +
-All information related to an aggregator is stored in an Object Store. The type of Object Store should relate to the expected behaviour of the component. +
++
+* Object Store:
++
+All information related to an aggregator is stored in an Object Store. The type of Object Store should relate to the expected behavior of the component.
 +
 Generally speaking:
-
-** Persistent Object Store (Default) : More reliable, permits data recovery after restart. Slower
-** In Memory Object Store : Faster. Will lose all the data if the application is restarted.
-
-
++
+** Persistent Object Store (Default): More reliable, permits data recovery after restart. Slower.
+** In Memory Object Store: Faster. Loses all the data if the application is restarted.
 
 == Aggregator Types
 
@@ -58,8 +58,8 @@ This example aggregates elements until a pre-defined size is reached, executing 
 
 ==== Parameters
 
-[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
-|======================
+[%header%autowidth.spread]
+|===
 | Name | Type | Description | Default Value | Required
 | Name | String | The name of the aggregator. It can later be referenced by an aggregator listener. || x
 | Content | Expression | The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation. | #[payload] |
@@ -69,7 +69,7 @@ This example aggregates elements until a pre-defined size is reached, executing 
 | Object Store | Object Store |  Either a name to reference a global object store or a definition of a private object store where the aggregated elements will be stored. |  Default Object Store partition. |
 | Aggregation Complete Route | Route | Components chain to execute once the aggregation is complete. | | x
 | Incremental Aggregation Route | Route | Components chain to execute for every new element that is aggregated. The payload is the list of all the elements that have been aggregated from the first one (in this aggregation) to the one that is being aggregated now. | |
-|======================
+|===
 
 
 ==== Raises
@@ -77,9 +77,10 @@ This example aggregates elements until a pre-defined size is reached, executing 
 * AGGREGATORS:AGGREGATOR_CONFIG
 +
 Whenever maxSize or timeout have invalid values (for example, `maxSize < 0`).
++
 * AGGREGATORS:OBJECT_STORE_ACCESS
 +
-{nbsp} If there is any issue accessing the ObjectStore used to store the aggregated values.
+If there is any issue accessing the ObjectStore used to store the aggregated values.
 
 
 [[time-based-aggregator]]
@@ -101,14 +102,12 @@ Whenever maxSize or timeout have invalid values (for example, `maxSize < 0`).
 </aggregators:time-based-aggregator>
 ----
 
-
 Aggregates elements until a time period is completed, executing the routes and listeners.
-
 
 ==== Parameters
 
-[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
-|======================
+[%header%autowidth.spread]
+|===
 | Name | Type | Description | Default Value | Required
 | Name | String | The name of the aggregator. It can later be referenced by an aggregator listener. || x
 | Content | Expression | The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation. | #[payload] |
@@ -117,16 +116,17 @@ Aggregates elements until a time period is completed, executing the routes and l
 | Max Size | Number | The total number of elements to be aggregated before considering the aggregation to be complete. | -1(UNLIMITED) |
 | Object Store | Object Store |  Either a name to reference a global object store or a definition of a private object store where the aggregated elements will be stored. |  Default Object Store partition. |
 | Incremental Aggregation Route | Route | Components chain to be executed for every new element that is aggregated. The payload is the list of all the elements that have been aggregated from the first one (in this aggregation) to the one that is being aggregated now. | |
-|======================
+|===
 
 ==== Raises
 
 * AGGREGATORS:AGGREGATOR_CONFIG
 +
 Whenever period or `maxSize` has invalid values (for example, `Period = 0`).
++
 * AGGREGATORS:OBJECT_STORE_ACCESS
 +
-{nbsp} If there is any issue accessing the ObjectStore used to store the aggregated values.
+If there is any issue accessing the ObjectStore used to store the aggregated values.
 
 [[group-based-aggregator]]
 === Group-Based Aggregator
@@ -168,8 +168,8 @@ Lastly, when elements that reach group-based aggregators come from a sequence th
 
 ==== Parameters
 
-[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
-|======================
+[%header%autowidth.spread]
+|===
 | Name | Type | Description | Default Value | Required
 | Name | String | The name of the aggregator. It can later be used to be referenced by an aggregator listener || x
 | Content | Expression | The expression that defines what to aggregate. The result of the evaluation is the value stored in the aggregation. | #[payload] |
@@ -182,7 +182,7 @@ Lastly, when elements that reach group-based aggregators come from a sequence th
 | Object Store | Object Store |  Either a name to reference a global object store or a definition of a private object store where the aggregated elements will be stored. |  Default Object Store partition |
 | Aggregation Complete Route | Route |  Components chain to execute once the aggregation is complete. | | x
 | Incremental Aggregation Route | Route | Components chain to execute for every new element that is aggregated. The payload is the list of all the elements that have been aggregated from the first one (in this aggregation) to the one that is being aggregated now. | |
-|======================
+|===
 
 ==== Raises
 
@@ -207,7 +207,7 @@ When the expression that resolves to the group size returns null.
 When the group size or timeout has invalid values (for example, `groupSize < 0`).
 * AGGREGATORS:OBJECT_STORE_ACCESS
 +
-{nbsp} If there is any issue accessing the ObjectStore used to store the aggregated values.
+If there is any issue accessing the ObjectStore used to store the aggregated values.
 
 
 == Sources
@@ -222,26 +222,27 @@ Once the aggregator that is referenced by the listener completes an aggregation,
 
 ==== Parameters
 
-[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
-|======================
+[%header%autowidth.spread]
+|===
 | Name | Type | Description | Default Value | Required
 | Aggregator Name | String | The name of the aggregator to listen to. Once that aggregator releases its elements, the listener will be executed. Each listener can only reference one aggregator, and each aggregator can only be referenced by at most one listener. | | x
 | Include Timed Out Groups | Boolean | Indicates whether the listener should be triggered when a group is released due to a timeout. | false |
-|======================
+|===
 
 == Aggregation Attributes
+
 Each time a message goes through an aggregation, some attributes with information about the aggregation are added to it.
 
-[cols=".^20%,.^20%,.^35%", options="header"]
-|======================
+[%header%autowidth.spread]
+|===
 | Name | Type | Description
 | Aggregation ID | String | The ID from the group where the element was aggregated. If the aggregation strategy does not aggregate by group, this field will be an autogenerated value that is kept until the aggregation is released (as with group-based and time-based aggregators).
 | First Item Arrival Time | Date | The time when the first value was aggregated.
 | Last Item Arrival Time | Date | The time when the last value was aggregated.
 | Is Aggregation Complete | Boolean | True if the aggregation is complete, False otherwise.
-|======================
+|===
 
-== Async vs Sync Aggregations
+== Async Versus Sync Aggregations
 
 There are two kinds of triggers for an aggregation completion: Synchronous and Asynchronous. +
 As seen in the configurations, an aggregation can be considered complete based on a new element being added to the list (as when a max size is specified) or because some timeout or time period was completed. _This is important because the type of aggregation determines which chain of components to execute with the list of elements._
