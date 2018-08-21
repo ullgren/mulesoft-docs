@@ -1,20 +1,24 @@
-= Mule Aggregators Module Release Notes
+= Aggregators Module Release Notes
 :keywords: aggregators, module, release notes
 
 *August 2018*
 
-link:/connectors/aggregators-documentation[Aggregators Module Documentation Reference]
+link:/connectors/aggregators-module-reference[Aggregators Module Reference]
 
 == 1.0.0
 
 *August 17, 2018*
 
 === Compatibility
-The Mule Aggregators Module is compatible with:
+
+The Aggregators Module is compatible with:
 
 |===
 |Application/Service|Version
-
 |Mule Runtime|4.1.1 and higher.
 |===
 
+== See Also
+
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]
