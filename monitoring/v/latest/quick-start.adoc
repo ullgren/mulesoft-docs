@@ -64,11 +64,11 @@ For Anypoint Monitoring to start monitoring your Mule apps, you must deploy them
 
 | Anypoint Platform (CloudHub)
 | 4.1.1-AM
-| JVM metrics only
+| Basic metrics and logs
 
 | Anypoint Platform (CloudHub)
 | 4.1.2-AM
-| JVM metrics only
+| Basic metrics and logs
 |===
 
 Note that metrics are used by graphs and other charts within link:dashboards[Dashboards].
