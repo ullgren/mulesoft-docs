@@ -21,7 +21,7 @@ now packaged as a JAR and have a different structure. You can use the Mule Maven
 |Your Mule XML code.|
 |===
 
-== mule-artifact.json
+== Application descritor
 Mule 4 applications include a `mule-artifact.json` file in `META-INF/mule-artifact/`. This describes your app, configuration settings,
 the required Mule version, and the class loader configuration.
 
@@ -48,9 +48,29 @@ the required Mule version, and the class loader configuration.
 }
 ----
 
+[cols=“1,3”]
+|===
+| configs | array of strings | set of mule configuration files |
+| redeploymentEnabled | boolean | defines if modifying the app configuration files will trigger a redeploy |
+| name | string | meaningful name for the application |
+| minMuleVersion | string | the minimum mule runtime version required to deploy the application |
+| requiredProduct | string | the required product type to deploy the application. MULE means that the application can be deployed on the CE version or the EE version, MULE_EE means that the application can only be deployed on the EE version |
+| classLoaderModelLoaderDescriptor | object | descriptor of the classloading model for the application. The id field identifies the mechanism to be used by the runtime to understand how the dependencies and the packages/resources of the application are meant to be used. By default mule uses the id `mule` which means that the exported packages and resources from the applications are described in the `attributes` field and the dependencies are described in the file `/META-INF/mule-artifact/classloader-model.json` |
+| bundleDescriptorLoader | object | descriptor of the application bundle coordiantes. The ide field identifies the mechanism to be used by the runtime to understand the application bundle coordinates. The default one used is `mule` and will load the artifact group id, artifact id and version from the pom file. |
+| secureProperties | array of string | declares the set of configuration properties of the artifact that must be managed as secure in the platform |
+|===
+
+== Application versioning
+
+Mule Runtime follows link:https://semver.org/[semantic versioning] in all it's artifacts. By following semantic versioning clients of our APIs can cleary understand what to expect whenever we release a new version of an asset. For instance, consider the case of mule connectors. You can expect just bug fixes when just the patch version is updated. You can expected new feature in new minor versions. Both of those changes are expected to be backward compatible so you can upgrade without any problem. But if we update the major version of the connector it means that we had to break backward compatibility to include new funcionality or provide a much better UX.
+
+It's also expected that mule artifacts (application, domains, policies) follow semantic versioning so you may encounter some validations when working with mule apps. By following semantic version the Anypoint Platform can have more understanding of new assets and provide a better experience. For instance if there's a new major version of a mule domain you can expect that there is not going to be, for instance, the same set of global components defined in it as in the previous major version so mule applications that belong to that domain may required to be updated if the new domain is used.
+
 == Mule Maven Plugin
 The Mule Maven Plugin in Mule 4 packages your app into the required format and enables you to deploy it into your target environment. Studio 7 will automatically add the plugin to your `pom.xml`. See the Mule Maven Plugin
 documentation for information on how to use it to deploy apps.
+
+IMPORTANT: Domains, policies, mule artifact plugins (connectors, modules, etc) all have the same structure as mule applications. Dependending on the type of artifact there could be more or less properties in the artifact descriptors (mule-artifact.json) but they are all similar and all must follow semantic versioning.
 
 == See Also
  * link:package-task-mmp[About the Mule Maven Plugin]
