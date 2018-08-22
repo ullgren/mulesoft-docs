@@ -4,7 +4,7 @@ Modules are extensions to the Mule runtime that you can use when building a Mule
 
 [IMPORTANT]
 ====
-For connectors that are compliant with Mule 3, see link:/connectors/mule-user-guide/v/3.9/anypoint-connectors[Anypoint Connectors (for Mule 3)].
+For connectors that are compliant with Mule 3, see link:/mule-user-guide/v/3.9/anypoint-connectors[Anypoint Connectors (for Mule 3)].
 ====
 
 == Most Popular Connectors
