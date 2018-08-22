@@ -38,6 +38,8 @@
 *** link:/cassandra-connector-reference[Cassandra Connector Reference]
 ** link:/compression-module[Compression Module]
 *** link:/compression-documentation[Compression Module Reference]
+** link:/cloudhub-connector[CloudHub Module]
+*** link:/cloudhub-connector-reference[CloudHub Connector Reference]
 ** link:/db-connector-index[Database Connector]
 *** link:/database-documentation[Database Connector Documentation Reference]
 *** link:/db-configure-connection[Configuring a Database Connection]

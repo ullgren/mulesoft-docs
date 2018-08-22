@@ -1,0 +1,185 @@
+= CloudHub Connector
+
+// Release Notes: link:/release-notes/connector-cloudhub[CloudHub Connector Release Notes]
+
+The CloudHub connector enables you to connect to the CloudHub API from your Mule Application
+providing the following capabilities
+
+* <<creating-notifications, Creation of Notifications>>
+* <<listing-notifications, Consumption of Notifications>>
+* <<marking-notifications, Mark notification as Read>>
+* <<listing-applications,Listing of created applications>>
+* <<retrieving-app-info, Retrieval of Application information>>.
+
+== Creating the CloudHub Configuration
+
+The basic CloudHub configuration has the following properties:
+
+* Username: The user of the Anypoint Platform Account
+* Password: The password of the given user.
+* Enviroment: Optional. Indicates which CloudHub environment to use. By default
+will be used the one defined as default in Anypoint Platform.
+
+.Minimum CloudHub Configuration
+[source,xml,linenums]
+----
+<cloudhub:config name="CloudHub_Config" >
+  <cloudhub:connection username="${ch.username}" password="${ch.password}" />
+</cloudhub:config>
+----
+
+=== Choosing the Environment
+
+==== Listing of available environments
+
+Once the username and password are configured correctly, the user is enabled
+to retrieve the available environments for an easier configuration.
+
+image:./_images/cloudhub-environment-value-provider.gif[Available Environments]
+
+==== Using the CloudHub Environment
+
+If the application is going to be used on CloudHub sometimes is desired to
+use the environment where the application is going to be deployed, for this case
+the user can use the <<environment.id-sysprop,`environment.id`>> system property.
+
+.Using the deployment environment
+[source,xml,linenums]
+----
+<cloudhub:config name="CloudHub_Config" >
+  <cloudhub:connection username="${ch.username}" password="${ch.password}" environment="${environment.id}"/>
+</cloudhub:config>
+----
+
+[[creating-notifications]]
+== Create a Notification
+
+To create a notification is required to use the Create Notification operation,
+this operation requires of the message of the notification and the associated domain (The application name).
+<<domain-sysprop,The domain can be also be configured using the domain system property>>.
+
+Optionally can be configured:
+
+* Custom properties, an open object to provide additional information in the created notification.
+* Transaction ID, the transaction id associated to the created notification.
+
+[source,xml,linenums]
+----
+<flow name="cloudhub-connector-flows" >
+  <cloudhub:create-notification domain="some-application-name" config-ref="CloudHub_Config" transactionId="#[uuid()]" priority="WARN">
+   <cloudhub:message >
+     <![CDATA[#["Problem occurred trying to process customer data"]]]>
+   </cloudhub:message>
+   <cloudhub:custom-properties >
+     <![CDATA[#[output application/java
+---
+{
+ "customer-id" : "ASD-123",
+ "date" : now()
+}]]]></cloudhub:custom-properties>
+  </cloudhub:create-notification>
+ </flow>
+----
+
+.Configuring on Studio
+image:./_images/cloudhub-create-notification.png[Creating Notification]
+
+[[listing-notifications]]
+== List Notifications
+
+The other part of using notification is the consumption of these, for this purpose
+is required to use the List Notifications operation.
+
+The operation requires only to define the domain from where the notifications
+are going to be retrieved. <<domain-sysprop,The domain can be also be configured using the domain system property>>.
+
+Optionally can be configured:
+
+* Limit, the number of notifications to retrieve, by default it will be -1 that means all available.
+* Status, filters the notifications to only retrieve the ones that are Unread, Read, or All. By default will only retrieve the ones marked as unread.
+* Search, only retrieves the ones that contains the given text.
+
+[source,xml,linenums]
+----
+<cloudhub:list-notifications config-ref="CloudHub_Config" domain="some-application-name"/>
+----
+
+.Configuring on Studio
+image:./_images/cloudhub-list-notifications.png[Creating Notification]
+
+This operation will return a List of Notifications and these notifications has the following structure.
+[[notification-object]]
+[source,yml,linenums]
+----
+  Notification:
+    type: object
+    properties:
+      id: string
+      domain: string
+      priority?: string
+      read: boolean
+      readOn?: datetime
+      createdAt: datetime
+      href: string
+      properties: object
+----
+
+[[marking-notification]]
+== Mark Notification as Read
+
+Once a notification is consumed could be desired to mark the notification as Read,
+so the next time that notifications are read only the unread ones will be retrieved.
+
+The operation Mark Notification only requires of the Notification ID, this can
+be obtained from the `id` property of a <<notification-object,Notification object>>.
+
+.Example of Marking notifications as Read
+[source,xml,linenums]
+----
+<cloudhub:list-notifications config-ref="CloudHub_Config" domain="some-application-name"/>
+<foreach>
+  <cloudhub:mark-notification markAs="READ" config-ref="CloudHub_Config" notificationId="#[payload.id]"/>
+</foreach>
+----
+
+[[listing-applications]]
+== List Applications
+
+With the connector you can retrieve all the available applications on the given environment.
+
+There is nothing required to configure and works out of the box.
+
+[source,xml,linenums]
+----
+<cloudhub:list-applications config-ref="CloudHub_Config"/>
+----
+
+There are several optional configurations to customize how to retrieve the information to have
+a more lightweight response or to have more information about the applications.
+
+[[retrieving-app-info]]
+== Retrieve an Application
+
+The connector retrieve information about one application deployment. The only required
+configuration is to define the Domain, the application name.
+<<domain-sysprop,The domain can be also be configured using the domain system property>>.
+
+[source,xml,linenums]
+----
+<cloudhub:get-application domain="some-application-name" config-ref="CloudHub_Config"/>
+----
+
+Returns all the information about the Application deployment.
+
+== Useful CloudHub System Properties
+
+[options="header"]
+|=======
+|Name |Information |Usage
+|[[domain-sysprop]] Domain |Gives the name of the domain where the application is being deployed on CloudHub | ${domain}
+|[[environment.id-sysprop]] Environment |Gives the name of the environment where the application is being deployed | ${environment.id}
+|=======
+
+== See Also
+
+* link:cloudhub-connector-ref[CloudHub Connector Reference]
