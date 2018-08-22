@@ -45,16 +45,20 @@ Notes:
 
 *Note:* Read the previous <<To Complete Upgrade to November Release>> and <<Why Group your APIs?>> for vital roll back and business group information.
 
-We recommend completing grouping your APIs before scheduling your upgrade to remove the name of the environment (dev, stg, etc.) and clean up API names or versions. After the upgrade, you can promote or "classify" an API version into an environment.
+We recommend completing the grouping of your APIs before scheduling your upgrade to remove the name of the environment (dev, stg, etc.), and clean up API names or versions. After the upgrade, you can promote or "classify" an API version into an environment.
 
 . Log into Anypoint Platform and go to API Manager.
+. To the right of each API in API Manager you should see a message that reads Prepare To Group. 
+. Click Prepare To Group to add an API to a new or existing group. In the popup, API Manager lists the Current API Name and Current API Version. 
+. Click Edit to change the New API Name, New API Version, or to include or exclude your API portal.
 +
-NOTE: To the right of each API in API Manager you should see a message that reads Prepare To Group. You can click Edit to change the New API Name, New API Version, or to include or exclude your portal. *Important*: Only one API portal can be migrated for a group of APIs.
+*Important*: Only one API portal can be migrated for a group of APIs.
 +
-. Click Prepare To Group to add an API to a new or existing group. On the *Group an API* screen, API Manager lists the Current API Name and Current API Version.
 . Specify a New API Name. This can be any string of ASCII characters.
 . Specify a New API Version Name. This can be any string of ASCII characters.
-. Optional. If you have a private or public portal for the API, you can upgrade the portal as well.
++
+NOTE: Do not store the environment name in the API Name or Version Name. After the upgrade, you can assign your APIs that reference the original names to the environments.
+
 
 == To Request Your Platform Upgrade
 
